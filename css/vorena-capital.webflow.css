@@ -3105,7 +3105,7 @@ figure {
 }
 
 .banner-wrapper {
-  background-image: url('../images/Banner-Bg.jpg');
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 65%), linear-gradient(to right, #C9A6FF 0%, #A7E0EB 50%, #70F3E5 100%);
   background-position: 50% 0;
   background-repeat: no-repeat;
   background-size: cover;
