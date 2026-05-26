@@ -1,0 +1,11 @@
+<svg width="170" height="224" viewBox="0 0 170 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd"
+  d="M18 0 H62 V10
+     Q 170 0, 170 12
+     V 60
+     Q 170 100, 62 100
+     V224 H18 Z
+     M63 10 H121
+     Q 63 20, 63 38 Z"
+  fill="#201c40"/>
+</svg>
