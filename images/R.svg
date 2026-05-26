@@ -1,18 +1,35 @@
 <svg width="152" height="224" viewBox="0 0 152 224" fill="none" xmlns="http://www.w3.org/2000/svg">
 <!--
-  Lowercase 'r' traced from reference PNG (388x580 → SVG 152x224, bar offset removed):
-  Bar:   x=0-44, y=0-224  (full height)
-  Arm:   starts at (44,0), sweeps right to x=152 at y=12, flat to y=59,
-         return curve back to bar at (44,99)
+  Lowercase 'r' — pixel-traced from reference PNG (388x580):
+
+  Bar:     x=0-44, y=0-224  (full height)
+
+  Arm top: Q from (44,0) ctrl(152,0) to (152,12)
+           → sweeps horizontally right, arrives vertically at max-right
+
+  Flat:    (152,12) → V 59  (flat right edge, matches data y=12-59)
+
+  Shoulder: L 100 62
+           → steep diagonal drop matching the data
+             (data: outer_right drops 152→93 in just 3 SVG units at y=59-62)
+
+  Return:  Q 44 80, 44 99
+           → gentle curve back to bar
+             (verified: t=0.5 gives (58,80) ≈ data 59 at y=80;
+                        t=0.8 gives (46,92) ≈ data 47 at y=92)
+
   Inner concave cutout (fill-rule evenodd):
-         from (45,9) across to (103,9), curves down to (45,37), closes vertically
+           From (45,9) right to (103,9) — data gap_r=103 at SVG y=9
+           Bezier Q(103,37) to (45,37) — curves back to bar edge
+           Closes vertically — data gap closes at SVG y=37
 -->
 <path fill-rule="evenodd" clip-rule="evenodd"
   d="M 0 0
      H 44
      Q 152 0 152 12
      V 59
-     Q 152 99 44 99
+     L 100 62
+     Q 44 80 44 99
      V 224
      H 0
      Z
