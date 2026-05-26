@@ -1,3 +1,12 @@
-<svg width="173" height="224" viewBox="0 0 173 224" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 223.077V0H80.2954L124.762 194.396H130.52V0H172.108V223.077H91.812L47.3456 28.6813H41.5873V223.077H0Z" fill="#0040C1"/>
+<svg width="170" height="224" viewBox="0 0 170 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!--
+  lowercase 'n':
+  - Two full-height legs (w=44px each): x=0-44 and x=126-170
+  - Bridge at top connected by inner arch
+  - Inner arch: from (44,112) Q-curve peaking at (85,61) to (126,112)
+  - Open counter below arch (open at bottom = typical 'n' shape)
+-->
+<path
+  d="M 0 224 V 0 H 170 V 224 H 126 V 112 Q 85 10 44 112 V 224 Z"
+  fill="#201c40"/>
 </svg>

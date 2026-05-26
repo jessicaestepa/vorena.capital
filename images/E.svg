@@ -1,0 +1,18 @@
+<svg width="160" height="224" viewBox="0 0 160 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!--
+  lowercase 'e':
+  - Outer arc: CCW large arc from right-center (157,112) around to arm start (124,50),
+    then arm extends right to (157,50), closes straight down back to (157,112)
+  - Inner counter: full circle at center (80,112) r=38, two CCW half-arcs
+-->
+<path fill-rule="evenodd" clip-rule="evenodd"
+  d="M 157 112
+     A 77 76 0 1 0 124 50
+     L 157 50
+     Z
+     M 80 74
+     A 38 38 0 1 0 80 150
+     A 38 38 0 1 0 80 74
+     Z"
+  fill="#201c40"/>
+</svg>
