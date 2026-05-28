@@ -3194,6 +3194,8 @@ figure {
   height: 27vh;
   position: relative;
   overflow: hidden;
+  margin-left: -1.5rem;
+  margin-right: 1.5rem;
 }
 
 .after-banner-wrap {
@@ -3263,7 +3265,7 @@ figure {
   z-index: 2;
   border: 2.25rem solid #201c40;
   border-radius: var(--_spacing-radius---radius--circle-radius);
-  background-color: rgba(210, 203, 243, 0.55);
+  background-color: rgb(211, 202, 245);
   pointer-events: none;
   width: 100%;
   height: 100%;
@@ -3935,12 +3937,12 @@ figure {
   overflow: hidden;
 }
 
-.banner-letter._01, .banner-letter._02, .banner-letter._03, .banner-letter._04 {
-  margin-right: 1.5rem;
+.banner-letter._01, .banner-letter._05 {
+  margin: 0;
 }
 
-.banner-letter._05 {
-  margin-left: 1.5rem;
+.banner-letter._02, .banner-letter._03, .banner-letter._04 {
+  margin: 0 0.75rem 0 0;
 }
 
 .banner-letters-flex {
@@ -3952,6 +3954,8 @@ figure {
   align-items: center;
   display: flex;
   position: relative;
+  transform: scale(min(1, calc((100vw - 80px) / 1405px)));
+  transform-origin: 50% 50%;
 }
 
 .banner-letters-wrap {
@@ -3964,7 +3968,7 @@ figure {
   flex: none;
   justify-content: center;
   align-items: center;
-  max-width: 16%;
+  max-width: none;
   display: flex;
   overflow: hidden;
 }

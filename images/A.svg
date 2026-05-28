@@ -1,15 +1,3 @@
-<svg width="160" height="224" viewBox="0 0 160 224" fill="none" xmlns="http://www.w3.org/2000/svg">
-<!--
-  lowercase 'a' (single-story):
-  - Right stem: x=118-160, full height y=0-224
-  - Bowl: outer boundary curved from (0,224) Q-curve to (80,40), roof at y=40 to stem
-  - Inner counter: oval at center (70,152) rx=38 ry=44
--->
-<path fill-rule="evenodd" clip-rule="evenodd"
-  d="M 118 0 H 160 V 224 H 0 Q 0 40 80 40 H 118 Z
-     M 70 108
-     A 38 44 0 1 0 70 196
-     A 38 44 0 1 0 70 108
-     Z"
-  fill="#201c40"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="211" height="224" viewBox="0 0 70.27 74.64">
+  <path fill="#211c42" stroke="#211c42" stroke-miterlimit="10" d="M69.77,72.68h-17.06l-.31-4.67c-20.02,14.51-47.21,1.86-51.34-23.22C-3.98,14.12,25.81-10.24,52.27,5.35c9.55,5.62,17.5,18.49,17.5,30.26v37.07ZM34.28,18.07c-23.41,1.25-21.67,39.1,1.05,38.63,23.45-.48,23.03-39.92-1.05-38.63Z"/>
 </svg>
