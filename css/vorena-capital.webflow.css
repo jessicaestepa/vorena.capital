@@ -1,4 +1,12 @@
 @font-face {
+  font-family: "TXT Groovy Smooth";
+  src: url('../fonts/TXTGroovySmooth.otf') format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Fa 400";
   src: url('../fonts/fa-regular-400.woff2') format("woff2");
   font-weight: 400;
@@ -47,7 +55,7 @@
   --_font-sizes---paragraphs--regular: 1rem;
   --_font-weight-line-height---line-heights--lh-150: 150%;
   --alice-blue: #eff4ff;
-  --primary: #0040c1;
+  --primary: #302961;
   --_spacing-radius---spacings--section-gap: 7.5rem;
   --_spacing-radius---spacings--none: 0rem;
   --independence: #4b5563;
@@ -244,6 +252,25 @@ figure {
   padding-top: 1.5rem;
   position: fixed;
   inset: 0% 0% auto;
+  opacity: 0;
+  transform: translateY(-120%);
+  pointer-events: none;
+  transition: opacity .5s cubic-bezier(.22, 1, .36, 1), transform .55s cubic-bezier(.22, 1, .36, 1);
+}
+
+html.show-navbar .navbar {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+@media screen and (max-width: 991px) {
+  .navbar {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    transition: none;
+  }
 }
 
 .container {
@@ -300,11 +327,43 @@ figure {
   border: 1px solid var(--azureish-white);
   border-radius: var(--_spacing-radius---radius--button-radius);
   background-color: var(--white);
-  padding: .625rem 1.75rem;
+  padding: .55rem 1.4rem;
+  display: inline-flex;
+  align-items: baseline;
+  text-decoration: none;
+  line-height: 1;
 }
 
 .main-logo {
   width: 10rem;
+}
+
+.main-logo-text {
+  font-family: "TXT Groovy Smooth", "Outfit", sans-serif;
+  font-size: 1.95rem;
+  line-height: 1;
+  color: #201c40;
+  letter-spacing: .04em;
+  display: inline-block;
+  text-transform: none;
+}
+
+.main-logo-o-mark {
+  width: 2.25em;
+  height: 1.25em;
+  border: .28em solid #201c40;
+  border-radius: 999px;
+  background-color: rgb(211, 202, 245);
+  display: inline-block;
+  margin: 0 .12em 0 -.05em;
+  flex: none;
+  box-sizing: border-box;
+  align-self: baseline;
+  vertical-align: baseline;
+}
+
+.main-logo-capital {
+  margin-left: .35em;
 }
 
 .nav-links-flex {
@@ -3111,6 +3170,66 @@ figure {
   background-size: cover;
   width: 100vw;
   height: 100vh;
+  position: relative;
+}
+
+.banner-capital-mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "TXT Groovy Smooth", "Outfit", sans-serif;
+  font-size: 7.5rem;
+  line-height: 1;
+  letter-spacing: .04em;
+  color: #211c42;
+  z-index: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translate(-100%, 20px);
+}
+
+html.show-capital .banner-capital-mark {
+  animation: capitalEntrance .7s cubic-bezier(.22, 1, .36, 1) forwards;
+}
+
+html.capital-scroll .banner-capital-mark {
+  opacity: calc(1 - clamp(0, var(--scroll-progress, 0) / 0.08, 1));
+  transform: translate(-100%, 0);
+  animation: none;
+}
+
+@keyframes capitalEntrance {
+  from {
+    opacity: 0;
+    transform: translate(-100%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-100%, 0);
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .banner-capital-mark {
+    position: static;
+    align-self: center;
+    margin-top: .75rem;
+    font-size: 2.5rem;
+    opacity: 1;
+    transform: none;
+  }
+
+  html.show-capital .banner-capital-mark {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media screen and (max-width: 478px) {
+  .banner-capital-mark {
+    font-size: 1.75rem;
+  }
 }
 
 .banner-vh-wrap {
@@ -3132,6 +3251,8 @@ figure {
   height: 100%;
   padding: 6.25rem 2.75rem;
   display: flex;
+  opacity: calc(1 - var(--scroll-progress, 0));
+  pointer-events: none;
 }
 
 .banner-content-bottom {
@@ -3190,12 +3311,13 @@ figure {
 .after-banner-wrapper {
   z-index: 99;
   flex: none;
-  width: 38%;
-  height: 27vh;
+  width: 28%;
+  height: 19vh;
   position: relative;
   overflow: hidden;
-  margin-left: -1.5rem;
-  margin-right: 1.5rem;
+  align-self: baseline;
+  margin-left: calc(-1.1rem * (1 - var(--scroll-progress, 0)));
+  margin-right: calc(1.2rem * (1 - var(--scroll-progress, 0)));
 }
 
 .after-banner-wrap {
@@ -3226,6 +3348,7 @@ figure {
   position: absolute;
   inset: auto 0% 1.5rem;
   overflow: hidden;
+  display: none;
 }
 
 .after-banner-ticker-flex {
@@ -3265,12 +3388,19 @@ figure {
   z-index: 2;
   border: 2.25rem solid #201c40;
   border-radius: var(--_spacing-radius---radius--circle-radius);
-  background-color: rgb(211, 202, 245);
   pointer-events: none;
   width: 100%;
   height: 100%;
   position: absolute;
   inset: 0%;
+}
+
+.banner-letter-o-fill {
+  background-color: rgb(211, 202, 245);
+  border-radius: var(--_spacing-radius---radius--circle-radius);
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
 }
 
 .after-banner-inner {
@@ -3937,12 +4067,28 @@ figure {
   overflow: hidden;
 }
 
+.banner-letter-text {
+  flex: none;
+  max-width: none;
+  font-family: "TXT Groovy Smooth", "Outfit", sans-serif;
+  font-size: 19rem;
+  line-height: 1.05;
+  color: #211c42;
+  display: block;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
 .banner-letter._01, .banner-letter._05 {
   margin: 0;
 }
 
 .banner-letter._02, .banner-letter._03, .banner-letter._04 {
-  margin: 0 0.75rem 0 0;
+  margin: 0;
+}
+
+.banner-letter-text._02, .banner-letter-text._03, .banner-letter-text._04 {
+  margin: 0;
 }
 
 .banner-letters-flex {
@@ -3951,10 +4097,13 @@ figure {
   grid-row-gap: 0rem;
   flex-flow: row;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
   display: flex;
   position: relative;
-  transform: scale(min(1, calc((100vw - 80px) / 1405px)));
+  --base-scale: min(1, calc((100vw - 80px) / 1405px));
+  --letters-scale: calc(var(--base-scale) + (1 - var(--base-scale)) * var(--scroll-progress, 0));
+  --vertical-shift: calc(-9vh * (1 - var(--scroll-progress, 0)));
+  transform: translateY(var(--vertical-shift)) scale(var(--letters-scale));
   transform-origin: 50% 50%;
 }
 
@@ -3971,6 +4120,9 @@ figure {
   max-width: none;
   display: flex;
   overflow: hidden;
+  margin-left: calc(0.45rem * (1 - var(--scroll-progress, 0)));
+  margin-right: calc(0.45rem * (1 - var(--scroll-progress, 0)));
+  width: calc(var(--natural-width, 200px) * max(0, min(1, (1 - (var(--scroll-progress, 0) - 0.286) / 0.143)))) !important;
 }
 
 .single-project-contents {
@@ -4180,6 +4332,14 @@ figure {
   object-fit: cover;
   width: 100%;
   height: 100%;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, #000 18%, #000 82%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 18%, #000 82%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent 0%, #000 18%, #000 82%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 18%, #000 82%, transparent 100%);
+  mask-composite: intersect;
 }
 
 .banner-bg-shape {
@@ -4188,6 +4348,7 @@ figure {
   height: 21.75rem;
   position: absolute;
   inset: auto 0% 0%;
+  opacity: calc(1 - var(--scroll-progress, 0));
 }
 
 .cta-text-marked {
@@ -4584,7 +4745,7 @@ figure {
 }
 
 .after-banner-title-line {
-  background-color: #0040c1;
+  background-color: #5d5895;
   width: 8rem;
   height: 2px;
   margin-left: .25rem;
@@ -4594,7 +4755,7 @@ figure {
 }
 
 .after-banner-title-mark {
-  color: #0040c1;
+  color: #5d5895;
 }
 
 @media screen and (min-width: 1440px) {
@@ -4683,6 +4844,10 @@ figure {
 
   .main-logo {
     width: 9rem;
+  }
+
+  .main-logo-text {
+    font-size: 1.7rem;
   }
 
   .nav-links-wrapper {
@@ -5429,6 +5594,18 @@ figure {
   .after-banner-wrapper {
     width: auto;
     height: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .banner-letters-flex {
+    --letters-scale: 1;
+    --vertical-shift: 0;
+    transform: none;
+  }
+
+  .banner-bg-shape {
+    opacity: 1;
   }
 
   .after-banner-wrap {
@@ -5888,6 +6065,10 @@ figure {
 
   .main-logo {
     width: 8rem;
+  }
+
+  .main-logo-text {
+    font-size: 1.5rem;
   }
 
   .inner-banner {
@@ -6830,6 +7011,10 @@ figure {
 
   .main-logo {
     width: 7rem;
+  }
+
+  .main-logo-text {
+    font-size: 1.25rem;
   }
 
   .inner-banner {
