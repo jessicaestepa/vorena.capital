@@ -2,7 +2,7 @@
 <html data-wf-page="6a150cd6ebd882e2c9b3a11e" data-wf-site="6a150cd4ebd882e2c9b3a0e1" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Vorena Capital</title>
+  <title>vorena capital</title>
   <meta content="Azenci is a premium Webflow HTML template for digital agencies, creative studios, and freelancers." name="description">
   <meta content="Arooth - Webflow HTML Website Template" property="og:title">
   <meta content="Azenci is a premium Webflow HTML template for digital agencies, creative studios, and freelancers." property="og:description">
@@ -32,7 +32,7 @@
         <div class="navbar-wrap">
           <div class="navbar-flex-wrap">
             <div class="nav-flex-left">
-              <a href="index.html" aria-current="page" class="main-logo-wrap w-nav-brand w--current" aria-label="vorena Capital"><span class="main-logo-text">V</span><span class="main-logo-o-mark" aria-hidden="true"></span><span class="main-logo-text">rena</span><span class="main-logo-text main-logo-capital">Capital</span></a>
+              <a href="index.html" aria-current="page" class="main-logo-wrap w-nav-brand w--current" aria-label="vorena Capital"><img src="images/final-logo.png" loading="lazy" alt="vorena Capital" class="main-logo"></a>
               <div class="nav-links-wrapper">
                 <div class="nav-links-flex">
                   <a href="index.html" aria-current="page" class="single-nav-link w-inline-block w--current">
@@ -165,7 +165,7 @@
             <div class="banner-letters-wrap">
               <div class="banner-letters-row">
                 <div class="banner-letters-flex">
-                  <div class="single-banner-letter _01"><span class="banner-letter-text _01">V</span></div>
+                  <div class="single-banner-letter _01"><img src="images/v-.svg" loading="lazy" alt="Banner Letter" class="banner-letter _01"></div>
                   <div class="after-banner-wrapper">
                     <div class="after-banner-inner">
                       <div class="after-banner-wrap">
@@ -207,11 +207,11 @@
                     </div>
                     <div class="banner-letter-o"><div class="banner-letter-o-fill"></div></div>
                   </div>
-                  <div class="single-banner-letter _02"><span class="banner-letter-text _02">r</span></div>
-                  <div class="single-banner-letter _03"><span class="banner-letter-text _03">e</span></div>
-                  <div class="single-banner-letter _04"><span class="banner-letter-text _04">n</span></div>
-                  <div class="single-banner-letter _05"><span class="banner-letter-text _05">a</span></div>
-                  <div class="banner-capital-mark">Capital</div>
+                  <div class="single-banner-letter _02"><img src="images/r-1.svg" loading="lazy" alt="Banner Letter" class="banner-letter _02"></div>
+                  <div class="single-banner-letter _03"><img src="images/e-1.svg" loading="lazy" alt="Banner Letter" class="banner-letter _03"></div>
+                  <div class="single-banner-letter _04"><img src="images/n-1.svg" loading="lazy" alt="Banner Letter" class="banner-letter _04"></div>
+                  <div class="single-banner-letter _05"><img src="images/a-1.svg" loading="lazy" alt="Banner Letter" class="banner-letter _05"></div>
+                  <div class="banner-capital-mark"><img src="images/capital.png" loading="lazy" alt="capital" class="banner-capital-mark-img"></div>
                 </div>
               </div>
             </div>
@@ -222,11 +222,11 @@
                     <p class="banner-details">We acquire overlooked companies and make them unstoppable with AI agents and LATAM talent.</p>
                   </div>
                   <div data-w-id="501f0b19-4ed6-6324-bf7b-ba48bf2901f7" style="-webkit-transform:translate3d(30px, null, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(30px, null, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(30px, null, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(30px, null, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0;filter:blur(5px)" class="banner-button-wrap">
-                    <a data-wf--primary-button--variant="alice-blue" href="contact-us.html" class="primary-button w-variant-3b35c6e6-bf39-22a4-81e5-2d58550c88a7 w-inline-block">
+                    <a data-wf--primary-button--variant="alice-blue" href="#banner-scroll" class="primary-button banner-hero-scroll-btn w-variant-3b35c6e6-bf39-22a4-81e5-2d58550c88a7 w-inline-block">
                       <div class="primary-button-flex">
                         <div class="primary-button-text-wrap">
-                          <div class="primary-button-text">Get Started Now</div>
-                          <div class="primary-button-text-hover">Get Started Now</div>
+                          <div class="primary-button-text">Want to know more</div>
+                          <div class="primary-button-text-hover">Want to know more</div>
                         </div>
                         <div class="primary-button-arrow-wrapper">
                           <div class="primary-button-arrow-wrap"><img src="images/Button-Arrow.svg" loading="lazy" alt="Arrow" class="primary-button-arrow"><img src="images/Button-Arrow.svg" loading="lazy" alt="Arrow" class="primary-button-arrow-hover"></div>
@@ -1659,16 +1659,26 @@
           return;
         }
         capital.style.visibility = document.documentElement.classList.contains('show-capital') ? 'visible' : 'hidden';
+        var flexRect = flex.getBoundingClientRect();
+        var wordRight = flexRect.left;
+        flex.querySelectorAll('.single-banner-letter, .after-banner-wrapper').forEach(function(el) {
+          wordRight = Math.max(wordRight, el.getBoundingClientRect().right);
+        });
         var lRect = lastLetter.getBoundingClientRect();
-        var fRect = flex.getBoundingClientRect();
-        capital.style.left = (lRect.right - fRect.left) + 'px';
-        capital.style.top = (lRect.bottom - fRect.top) + 'px';
+        capital.style.right = (flexRect.right - wordRight) + 'px';
+        capital.style.left = 'auto';
+        capital.style.top = (lRect.bottom - flexRect.top + 36) + 'px';
+        capital.style.width = 'auto';
       }
       function loop() {
         align();
         window.requestAnimationFrame(loop);
       }
       window.requestAnimationFrame(loop);
+      var capitalImg = capital.querySelector('.banner-capital-mark-img');
+      if (capitalImg && !capitalImg.complete) {
+        capitalImg.addEventListener('load', align);
+      }
       if (document.fonts && document.fonts.ready) {
         document.fonts.ready.then(align);
       }
@@ -1683,28 +1693,68 @@
     })();
 
     (function() {
-      function measureLetters() {
-        document.querySelectorAll('.single-banner-letter').forEach(function(el) {
-          var prevWidth = el.style.getPropertyValue('width');
-          var prevPriority = el.style.getPropertyPriority('width');
-          el.style.setProperty('width', 'max-content', 'important');
-          var w = el.scrollWidth || el.offsetWidth;
-          if (prevWidth) el.style.setProperty('width', prevWidth, prevPriority);
-          else el.style.removeProperty('width');
-          // Add buffer for glyph ink overhang (display fonts often extend beyond advance width)
-          el.style.setProperty('--natural-width', (w + 16) + 'px');
+      if (window.matchMedia('(max-width: 991px)').matches) return;
+      var section = document.querySelector('.banner-section');
+      var heroButton = document.querySelector('.banner-hero-scroll-btn');
+      if (!section || !heroButton) return;
+
+      var frames = [0.82, 0.94];
+
+      function getBannerMetrics() {
+        var scrollable = section.offsetHeight - window.innerHeight;
+        var sectionTop = window.scrollY + section.getBoundingClientRect().top;
+        return { scrollable: scrollable, sectionTop: sectionTop };
+      }
+
+      function getProgress() {
+        var metrics = getBannerMetrics();
+        if (metrics.scrollable <= 0) return 1;
+        return Math.min(1, Math.max(0, (window.scrollY - metrics.sectionTop) / metrics.scrollable));
+      }
+
+      function scrollToProgress(progress) {
+        var metrics = getBannerMetrics();
+        if (metrics.scrollable <= 0) return;
+        var targetY = Math.round(metrics.sectionTop + metrics.scrollable * progress);
+        var startY = window.scrollY;
+        var startTime = null;
+        var duration = 1400;
+
+        function ease(t) {
+          return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        }
+
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp;
+          var elapsed = Math.min(1, (timestamp - startTime) / duration);
+          window.scrollTo(0, startY + (targetY - startY) * ease(elapsed));
+          if (elapsed < 1) {
+            requestAnimationFrame(step);
+          } else {
+            window.dispatchEvent(new Event('scroll'));
+          }
+        }
+
+        requestAnimationFrame(step);
+      }
+
+      function handleHeroScroll(e) {
+        var progress = getProgress();
+        var nextFrame = frames.find(function(frame) {
+          return progress < frame - 0.05;
         });
+        if (nextFrame == null) {
+          window.location.href = 'contact-us.html';
+          return;
+        }
+        e.preventDefault();
+        e.stopPropagation();
+        scrollToProgress(nextFrame);
       }
-      if (document.fonts && document.fonts.ready) {
-        document.fonts.ready.then(measureLetters);
-      } else {
-        window.addEventListener('load', measureLetters);
-      }
-      window.addEventListener('resize', function() {
-        // Re-measure on resize since rem-based font-sizes can change with root size
-        setTimeout(measureLetters, 50);
-      }, { passive: true });
+
+      heroButton.addEventListener('click', handleHeroScroll);
     })();
+
   </script>
 </body>
 </html>

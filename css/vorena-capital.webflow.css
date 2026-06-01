@@ -335,7 +335,9 @@ html.show-navbar .navbar {
 }
 
 .main-logo {
-  width: 10rem;
+  width: 8.5rem;
+  height: auto;
+  display: block;
 }
 
 .main-logo-text {
@@ -3176,17 +3178,20 @@ html.show-navbar .navbar {
 .banner-capital-mark {
   position: absolute;
   top: 0;
-  left: 0;
-  font-family: "TXT Groovy Smooth", "Outfit", sans-serif;
-  font-size: 7.5rem;
-  line-height: 1;
-  letter-spacing: .04em;
-  color: #211c42;
+  right: 0;
+  left: auto;
   z-index: 0;
   pointer-events: none;
-  white-space: nowrap;
   opacity: 0;
-  transform: translate(-100%, 20px);
+  transform: translateY(20px);
+  line-height: 0;
+}
+
+.banner-capital-mark-img {
+  display: block;
+  width: 24rem;
+  max-width: none;
+  height: auto;
 }
 
 html.show-capital .banner-capital-mark {
@@ -3195,18 +3200,18 @@ html.show-capital .banner-capital-mark {
 
 html.capital-scroll .banner-capital-mark {
   opacity: calc(1 - clamp(0, var(--scroll-progress, 0) / 0.08, 1));
-  transform: translate(-100%, 0);
+  transform: translateY(0);
   animation: none;
 }
 
 @keyframes capitalEntrance {
   from {
     opacity: 0;
-    transform: translate(-100%, 20px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
-    transform: translate(-100%, 0);
+    transform: translateY(0);
   }
 }
 
@@ -3214,10 +3219,14 @@ html.capital-scroll .banner-capital-mark {
   .banner-capital-mark {
     position: static;
     align-self: center;
-    margin-top: .75rem;
-    font-size: 2.5rem;
+    margin-top: 1.5rem;
     opacity: 1;
     transform: none;
+  }
+
+  .banner-capital-mark-img {
+    width: 12rem;
+    height: auto;
   }
 
   html.show-capital .banner-capital-mark {
@@ -3227,8 +3236,8 @@ html.capital-scroll .banner-capital-mark {
 }
 
 @media screen and (max-width: 478px) {
-  .banner-capital-mark {
-    font-size: 1.75rem;
+  .banner-capital-mark-img {
+    width: 11rem;
   }
 }
 
@@ -3251,7 +3260,7 @@ html.capital-scroll .banner-capital-mark {
   height: 100%;
   padding: 6.25rem 2.75rem;
   display: flex;
-  opacity: calc(1 - var(--scroll-progress, 0));
+  opacity: calc(1 - clamp(0, var(--scroll-progress, 0) / 0.08, 1));
   pointer-events: none;
 }
 
@@ -3264,6 +3273,12 @@ html.capital-scroll .banner-capital-mark {
   align-items: center;
   display: flex;
   position: relative;
+}
+
+.banner-button-wrap {
+  pointer-events: auto;
+  position: relative;
+  z-index: 5;
 }
 
 .banner-details {
@@ -3311,13 +3326,11 @@ html.capital-scroll .banner-capital-mark {
 .after-banner-wrapper {
   z-index: 99;
   flex: none;
-  width: 28%;
-  height: 19vh;
+  width: 17rem;
+  height: 10rem;
   position: relative;
   overflow: hidden;
-  align-self: baseline;
-  margin-left: calc(-1.1rem * (1 - var(--scroll-progress, 0)));
-  margin-right: calc(1.2rem * (1 - var(--scroll-progress, 0)));
+  margin-right: calc(1.1rem * var(--banner-letter-spacing, 1));
 }
 
 .after-banner-wrap {
@@ -3325,8 +3338,9 @@ html.capital-scroll .banner-capital-mark {
   width: 100vw;
   height: 100vh;
   padding-top: 12.25rem;
-  position: relative;
-  inset: 0%;
+  position: absolute;
+  left: calc(50% - 50vw);
+  top: 0;
 }
 
 .after-banner-content-wrap {
@@ -3386,13 +3400,14 @@ html.capital-scroll .banner-capital-mark {
 
 .banner-letter-o {
   z-index: 2;
-  border: 2.25rem solid #201c40;
+  border: 2rem solid #201c40;
   border-radius: var(--_spacing-radius---radius--circle-radius);
   pointer-events: none;
   width: 100%;
   height: 100%;
   position: absolute;
   inset: 0%;
+  box-sizing: border-box;
 }
 
 .banner-letter-o-fill {
@@ -4056,15 +4071,23 @@ html.capital-scroll .banner-capital-mark {
 .banner-letters-row {
   flex-flow: column;
   justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 100vh;
   display: flex;
+  padding-left: calc(3rem * (1 - min(1, var(--scroll-progress, 0) / 0.15)));
+  padding-right: calc(3rem * (1 - min(1, var(--scroll-progress, 0) / 0.15)));
+  padding-bottom: calc(7.5rem * (1 - min(1, var(--scroll-progress, 0) / 0.12)));
+  box-sizing: border-box;
 }
 
 .banner-letter {
   flex: none;
   max-width: none;
   overflow: hidden;
+  display: block;
+  height: var(--banner-letter-height, 10rem);
+  width: auto;
 }
 
 .banner-letter-text {
@@ -4079,11 +4102,7 @@ html.capital-scroll .banner-capital-mark {
   white-space: nowrap;
 }
 
-.banner-letter._01, .banner-letter._05 {
-  margin: 0;
-}
-
-.banner-letter._02, .banner-letter._03, .banner-letter._04 {
+.banner-letter._01, .banner-letter._02, .banner-letter._03, .banner-letter._04, .banner-letter._05 {
   margin: 0;
 }
 
@@ -4093,18 +4112,29 @@ html.capital-scroll .banner-capital-mark {
 
 .banner-letters-flex {
   z-index: 1;
-  grid-column-gap: 0rem;
-  grid-row-gap: 0rem;
+  --banner-letter-spacing: calc(1 - min(1, var(--scroll-progress, 0) / 0.12));
+  column-gap: 0;
+  grid-row-gap: 0;
   flex-flow: row;
   justify-content: center;
-  align-items: baseline;
+  align-items: center;
+  align-self: stretch;
   display: flex;
   position: relative;
-  --base-scale: min(1, calc((100vw - 80px) / 1405px));
-  --letters-scale: calc(var(--base-scale) + (1 - var(--base-scale)) * var(--scroll-progress, 0));
-  --vertical-shift: calc(-9vh * (1 - var(--scroll-progress, 0)));
-  transform: translateY(var(--vertical-shift)) scale(var(--letters-scale));
-  transform-origin: 50% 50%;
+  width: 100%;
+  --banner-letter-height: 10rem;
+  max-width: calc(100vw - (6rem * (1 - min(1, var(--scroll-progress, 0) / 0.15))));
+  transform: translateY(calc(-2.75rem * (1 - min(1, var(--scroll-progress, 0) / 0.12))));
+}
+
+.single-banner-letter._01 {
+  margin-right: calc(0.45rem * var(--banner-letter-spacing, 1));
+}
+
+.single-banner-letter._02,
+.single-banner-letter._03,
+.single-banner-letter._04 {
+  margin-right: calc(1.1rem * var(--banner-letter-spacing, 1));
 }
 
 .banner-letters-wrap {
@@ -4117,12 +4147,10 @@ html.capital-scroll .banner-capital-mark {
   flex: none;
   justify-content: center;
   align-items: center;
+  width: auto;
   max-width: none;
   display: flex;
   overflow: hidden;
-  margin-left: calc(0.45rem * (1 - var(--scroll-progress, 0)));
-  margin-right: calc(0.45rem * (1 - var(--scroll-progress, 0)));
-  width: calc(var(--natural-width, 200px) * max(0, min(1, (1 - (var(--scroll-progress, 0) - 0.286) / 0.143)))) !important;
 }
 
 .single-project-contents {
@@ -4843,7 +4871,7 @@ html.capital-scroll .banner-capital-mark {
   }
 
   .main-logo {
-    width: 9rem;
+    width: 7rem;
   }
 
   .main-logo-text {
@@ -5599,8 +5627,6 @@ html.capital-scroll .banner-capital-mark {
   }
 
   .banner-letters-flex {
-    --letters-scale: 1;
-    --vertical-shift: 0;
     transform: none;
   }
 
@@ -6064,7 +6090,7 @@ html.capital-scroll .banner-capital-mark {
   }
 
   .main-logo {
-    width: 8rem;
+    width: 6rem;
   }
 
   .main-logo-text {
@@ -7010,7 +7036,7 @@ html.capital-scroll .banner-capital-mark {
   }
 
   .main-logo {
-    width: 7rem;
+    width: 5.25rem;
   }
 
   .main-logo-text {
