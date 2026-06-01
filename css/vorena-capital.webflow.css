@@ -2185,6 +2185,92 @@ html.show-navbar .navbar {
   overflow: clip;
 }
 
+.banner-mobile-hero {
+  display: none;
+}
+
+.banner-mobile-wordmark {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.06rem 0.14rem;
+}
+
+.banner-mobile-letter {
+  display: block;
+  height: 2.15rem;
+  width: auto;
+  flex: none;
+}
+
+.banner-mobile-o-slot {
+  display: inline-block;
+  flex: none;
+  width: calc(2.15rem * 1.7);
+  height: 2.15rem;
+  position: relative;
+}
+
+.banner-mobile-o {
+  box-sizing: border-box;
+  border: 0.43rem solid #201c40;
+  border-radius: 999px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.banner-mobile-o-fill {
+  background-color: #d3caf5;
+  border-radius: 999px;
+  position: absolute;
+  inset: 0;
+}
+
+.banner-mobile-brand {
+  display: inline-flex;
+  flex-flow: column;
+  align-items: flex-start;
+  width: fit-content;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.banner-mobile-capital {
+  display: block;
+  width: auto;
+  height: 1.75rem;
+  margin-top: 0.2rem;
+  align-self: flex-end;
+}
+
+.banner-mobile-content {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 22rem;
+}
+
+.banner-mobile-title {
+  color: var(--eerie-black);
+  font-size: 1.65rem;
+  line-height: 1.2;
+  font-weight: var(--_font-weight-line-height---font-weights--regular);
+  margin: 0;
+}
+
+.banner-mobile-details {
+  color: var(--independence);
+  font-size: var(--_font-sizes---paragraphs--regular);
+  line-height: var(--_font-weight-line-height---line-heights--lh-150);
+  margin: 0;
+}
+
 ._404-content-wrap {
   text-align: center;
   max-width: 32rem;
@@ -3066,7 +3152,7 @@ html.show-navbar .navbar {
 }
 
 .about-vh-wrap {
-  height: 200vh;
+  height: auto;
 }
 
 .testimonial-shape-left {
@@ -3150,18 +3236,16 @@ html.show-navbar .navbar {
 }
 
 .awards-vh-wrap {
-  flex-flow: column;
-  justify-content: flex-end;
-  height: 250vh;
-  display: flex;
+  height: auto;
+  display: block;
 }
 
 .award-item-wrap {
   border-radius: var(--_spacing-radius---radius--xxl);
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  display: flex;
+  transform: none;
+  opacity: 1;
+  width: auto;
+  height: auto;
   overflow: hidden;
 }
 
@@ -3236,8 +3320,59 @@ html.capital-scroll .banner-capital-mark {
 }
 
 @media screen and (max-width: 478px) {
-  .banner-capital-mark-img {
-    width: 11rem;
+  .banner-mobile-hero {
+    padding: 4rem 1rem 2.5rem;
+    gap: 1.25rem;
+  }
+
+  #about.section.about-us {
+    padding-top: 1.5rem;
+  }
+
+  .banner-mobile-letter {
+    height: 1.9rem;
+  }
+
+  .banner-mobile-o-slot {
+    width: calc(1.9rem * 1.7);
+    height: 1.9rem;
+  }
+
+  .banner-mobile-o {
+    border-width: 0.38rem;
+  }
+
+  .banner-mobile-capital {
+    height: 1.55rem;
+  }
+
+  .banner-mobile-title {
+    font-size: 1.3rem;
+  }
+
+  .banner-mobile-content {
+    gap: 1rem;
+    max-width: 100%;
+  }
+
+  .hamburger-button {
+    box-sizing: border-box;
+    width: 2.625rem !important;
+    height: 2.625rem !important;
+    min-width: 2.625rem;
+    min-height: 2.625rem;
+    border-radius: 999px !important;
+    padding: 0 !important;
+    overflow: visible;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hamburger-button.w-nav-button {
+    padding: 0 !important;
+    float: none;
   }
 }
 
@@ -4866,6 +5001,53 @@ html.capital-scroll .banner-capital-mark {
     padding-right: 1rem;
   }
 
+  .navbar-wrap {
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .navbar-flex-wrap {
+    justify-content: flex-end;
+  }
+
+  .nav-flex-left {
+    display: none;
+  }
+
+  .nav-flex-right,
+  .nav-right-flex {
+    width: auto;
+    justify-content: flex-end;
+  }
+
+  .nav-button-wrap {
+    display: none;
+  }
+
+  .hamburger-button {
+    box-sizing: border-box;
+    width: 2.875rem !important;
+    height: 2.875rem !important;
+    min-width: 2.875rem;
+    min-height: 2.875rem;
+    border-radius: 999px !important;
+    padding: 0 !important;
+    overflow: visible;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hamburger-button.w-nav-button {
+    padding: 0 !important;
+    float: none;
+  }
+
+  .hamburger-bar {
+    width: 1.125rem;
+  }
+
   .main-logo-wrap {
     padding: .5rem 1rem;
   }
@@ -5590,6 +5772,52 @@ html.capital-scroll .banner-capital-mark {
   .banner-wrapper {
     width: auto;
     height: auto;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .banner-mobile-hero {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 4.5rem 1.25rem 3rem;
+    box-sizing: border-box;
+  }
+
+  .banner-mobile-wordmark {
+    flex-wrap: nowrap;
+    max-width: 100%;
+    gap: 0.06rem 0.14rem;
+  }
+
+  .banner-mobile-letter {
+    height: 2.15rem;
+    flex: none;
+    min-width: 0;
+  }
+
+  .banner-mobile-o-slot {
+    width: calc(2.15rem * 1.7);
+    height: 2.15rem;
+    flex: none;
+  }
+
+  .banner-mobile-capital {
+    height: 1.75rem;
+    width: auto;
+  }
+
+  .banner-mobile-title {
+    font-size: 1.45rem;
+  }
+
+  .banner-letters-wrap,
+  .container.banner-container {
+    display: none !important;
   }
 
   .banner-vh-wrap {
@@ -5599,6 +5827,35 @@ html.capital-scroll .banner-capital-mark {
   .banner-sticky-wrap {
     height: auto;
     position: static;
+  }
+
+  #about.section.about-us {
+    padding-top: 2rem;
+    scroll-margin-top: 5rem;
+  }
+
+  .about-us-title-wrapper {
+    margin-bottom: 2.5rem;
+  }
+
+  .about-us-subtitle-wrap {
+    margin-bottom: 1.75rem;
+  }
+
+  .about-award-count-wrap {
+    margin-bottom: 1.5rem;
+  }
+
+  .about-us-title {
+    margin-bottom: 1.25rem;
+  }
+
+  .about-section-details {
+    margin-bottom: 1.75rem;
+  }
+
+  .award-count-arrow-wrap.one {
+    display: none;
   }
 
   .banner-content-wrapper {
@@ -5619,49 +5876,8 @@ html.capital-scroll .banner-capital-mark {
     display: none;
   }
 
-  .after-banner-wrapper {
-    width: auto;
-    height: auto;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .banner-letters-flex {
-    transform: none;
-  }
-
   .banner-bg-shape {
     opacity: 1;
-  }
-
-  .after-banner-wrap {
-    height: auto;
-    padding-top: 10rem;
-  }
-
-  .after-banner-content-wrap {
-    max-width: 25rem;
-  }
-
-  .after-banner-details {
-    margin-bottom: 1rem;
-  }
-
-  .after-banner-ticker-wrap {
-    margin-top: 3.75rem;
-    position: static;
-  }
-
-  .after-banner-ticker-text {
-    font-size: var(--_font-sizes---titles--large-title);
-  }
-
-  .banner-letter-o {
-    display: none;
-  }
-
-  .after-banner-inner {
-    border-radius: 0;
   }
 
   .feature-banner-content-wrap {
@@ -5915,18 +6131,39 @@ html.capital-scroll .banner-capital-mark {
 
   .banner-letters-wrap {
     position: static;
+    padding-top: 4.75rem;
+  }
+
+  .banner-letter {
+    flex: 0 auto;
   }
 
   .single-banner-letter {
-    display: none;
+    display: flex;
   }
 
   .hamburger-bar {
-    width: 30px;
+    width: 1.125rem;
   }
 
   .hamburger-button {
-    width: 4.25rem;
+    box-sizing: border-box;
+    width: 2.875rem !important;
+    height: 2.875rem !important;
+    min-width: 2.875rem;
+    min-height: 2.875rem;
+    border-radius: 999px !important;
+    padding: 0 !important;
+    overflow: visible;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hamburger-button.w-nav-button {
+    padding: 0 !important;
+    float: none;
   }
 
   .navigation-content-wrap {
@@ -6086,7 +6323,28 @@ html.capital-scroll .banner-capital-mark {
   }
 
   .navbar-wrap {
-    padding: .625rem;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .hamburger-button {
+    box-sizing: border-box;
+    width: 2.75rem !important;
+    height: 2.75rem !important;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    border-radius: 999px !important;
+    padding: 0 !important;
+    overflow: visible;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hamburger-button.w-nav-button {
+    padding: 0 !important;
+    float: none;
   }
 
   .main-logo {
@@ -6864,12 +7122,27 @@ html.capital-scroll .banner-capital-mark {
   }
 
   .hamburger-bar {
-    width: 26px;
+    width: 1.125rem;
   }
 
   .hamburger-button {
-    width: 4rem;
-    height: 2.5rem;
+    box-sizing: border-box;
+    width: 2.75rem !important;
+    height: 2.75rem !important;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    border-radius: 999px !important;
+    padding: 0 !important;
+    overflow: visible;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hamburger-button.w-nav-button {
+    padding: 0 !important;
+    float: none;
   }
 
   .navigation-content-wrap {
@@ -7027,7 +7300,28 @@ html.capital-scroll .banner-capital-mark {
   }
 
   .navbar-wrap {
-    padding: .5rem;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .hamburger-button {
+    box-sizing: border-box;
+    width: 2.625rem !important;
+    height: 2.625rem !important;
+    min-width: 2.625rem;
+    min-height: 2.625rem;
+    border-radius: 999px !important;
+    padding: 0 !important;
+    overflow: visible;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hamburger-button.w-nav-button {
+    padding: 0 !important;
+    float: none;
   }
 
   .main-logo-wrap {
@@ -7612,7 +7906,7 @@ html.capital-scroll .banner-capital-mark {
   }
 
   .after-banner-wrap {
-    padding-top: 7rem;
+    padding-top: 0;
   }
 
   .after-banner-content-wrap {
@@ -7782,12 +8076,27 @@ html.capital-scroll .banner-capital-mark {
   }
 
   .hamburger-bar {
-    width: 24px;
+    width: 1.125rem;
   }
 
   .hamburger-button {
-    width: 3.5rem;
-    height: 2.25rem;
+    box-sizing: border-box;
+    width: 2.625rem !important;
+    height: 2.625rem !important;
+    min-width: 2.625rem;
+    min-height: 2.625rem;
+    border-radius: 999px !important;
+    padding: 0 !important;
+    overflow: visible;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hamburger-button.w-nav-button {
+    padding: 0 !important;
+    float: none;
   }
 
   .navigation-content-wrap {
