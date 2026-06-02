@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Business inquiry | vorena capital</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="../css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="../css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="../css/vorena-capital.webflow.css" rel="stylesheet" type="text/css">
+  <link href="../css/get-in-touch-section.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">WebFont.load({ google: { families: ["Instrument Sans:400,500,600,700","Poppins:300,400,500,600,700"] } });</script>
+  <link href="../images/favicon.svg" rel="shortcut icon" type="image/x-icon">
+</head>
+<body>
+  <div class="page-wrapper contact-intent-page contact-intent-page--business">
+    <div class="contact-intent-bg" aria-hidden="true"></div>
+    <header class="contact-intent-nav">
+      <div class="container contact-intent-nav-inner">
+        <a href="../index.html#hero" class="contact-intent-logo w-inline-block" aria-label="vorena capital">
+          <img src="../images/final-logo.png" loading="lazy" alt="" class="contact-intent-logo-img">
+        </a>
+        <a href="../index.html#get-in-touch" class="contact-intent-back" data-i18n="contactIntent.back">← Back to home</a>
+      </div>
+    </header>
+    <main class="contact-intent-main">
+      <div class="container">
+        <div class="contact-intent-stage">
+          <div class="contact-intent-visual" aria-hidden="true">
+            <img src="../images/contact-visual.png" loading="lazy" alt="" class="contact-intent-visual-img">
+            <div class="contact-intent-visual-fade"></div>
+          </div>
+          <div class="contact-intent-grid">
+          <div class="contact-intent-intro">
+            <p class="contact-intent-eyebrow" data-i18n="contactIntent.business.eyebrow">Business inquiry</p>
+            <h1 class="contact-intent-display">
+              <span class="contact-intent-display-line" data-i18n="contactIntent.business.displayLine1">Tell us</span>
+              <span class="contact-intent-display-mark" data-i18n="contactIntent.business.displayLine2">about your business.</span>
+            </h1>
+            <p class="contact-intent-lead" data-i18n="contactIntent.business.lead">Share a few details and we'll follow up about what vorena could do with your company.</p>
+            <ul class="contact-intent-points">
+              <li data-i18n="contactIntent.business.point1">For founders and owners exploring a sale or partnership</li>
+              <li data-i18n="contactIntent.business.point2">Confidential, we typically reply within a few days</li>
+            </ul>
+          </div>
+          <div class="contact-intent-form-panel">
+            <div class="contact-intent-form-panel-inner">
+              <h2 class="contact-intent-form-title" data-i18n="contactIntent.formTitle">Start the conversation</h2>
+              <form action="mailto:hello@vorenacapital.com" method="post" enctype="text/plain" class="contact-intent-form">
+                <input type="hidden" name="source" value="business">
+                <div class="contact-intent-fields-row">
+                  <div class="contact-intent-field">
+                    <label for="name" data-i18n="contactIntent.nameLabel">Name</label>
+                    <input class="contact-intent-input" id="name" name="name" type="text" required autocomplete="name" placeholder="Your name">
+                  </div>
+                  <div class="contact-intent-field">
+                    <label for="email" data-i18n="contactIntent.emailLabel">Email</label>
+                    <input class="contact-intent-input" id="email" name="email" type="email" required autocomplete="email" placeholder="you@company.com">
+                  </div>
+                </div>
+                <div class="contact-intent-field">
+                  <label for="company" data-i18n="contactIntent.companyLabel">Company</label>
+                  <input class="contact-intent-input" id="company" name="company" type="text" autocomplete="organization" placeholder="Company name">
+                </div>
+                <div class="contact-intent-field">
+                  <label for="message" data-i18n="contactIntent.messageLabel">Message</label>
+                  <textarea class="contact-intent-textarea" id="message" name="message" required placeholder="Tell us about your business, sector, and what you're looking for."></textarea>
+                </div>
+                <button type="submit" class="contact-intent-submit">
+                  <span class="contact-intent-submit-text" data-i18n="contactIntent.submit">Send message</span>
+                  <span class="contact-intent-submit-icon" aria-hidden="true">
+                    <img src="../images/Button-Arrow-Blue.svg" loading="lazy" alt="" class="contact-intent-submit-arrow">
+                  </span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="../js/i18n.js" type="text/javascript"></script>
+</body>
+</html>

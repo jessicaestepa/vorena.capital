@@ -1,0 +1,70 @@
+/* Mobile-only scroll reveals — desktop styles unchanged */
+
+@media screen and (max-width: 991px) {
+  /* Cancel desktop GSAP "hidden until visible" rules on mobile */
+  html.companies-motion-ready .companies-section:not(.companies-visible) .service-tabs-grid-left,
+  html.companies-motion-ready .companies-section:not(.companies-visible) .service-tabs-grid-right,
+  html.whos-behind-motion-ready .whos-behind-section:not(.whos-behind-visible) .whos-behind-spotlight-card {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+
+  /* Manifesto: per-block reveals only — cancel whole-section fade on mobile */
+  html.mobile-scroll-reveal-ready .manifesto-section .manifesto-inner {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  html.mobile-scroll-reveal-ready .mobile-reveal {
+    opacity: 0;
+    transform: translate3d(0, 1.125rem, 0);
+    transition:
+      opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  html.mobile-scroll-reveal-ready .mobile-reveal.mobile-revealed {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  /* Manifesto: beat Webflow/IX cascade so blocks stay hidden until revealed */
+  html.mobile-scroll-reveal-ready .manifesto-section .mobile-reveal:not(.mobile-revealed) {
+    opacity: 0 !important;
+    transform: translate3d(0, 1.125rem, 0) !important;
+  }
+
+  html.mobile-scroll-reveal-ready .manifesto-section .mobile-reveal.mobile-revealed {
+    opacity: 1 !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+
+  /* Get in touch: options follow mobile reveal, not batch options-visible */
+  html.mobile-scroll-reveal-ready .get-in-touch-section .get-in-touch-option.mobile-reveal:not(.mobile-revealed) {
+    opacity: 0;
+    transform: translate3d(0, 0.85rem, 0);
+  }
+
+  html.mobile-scroll-reveal-ready .get-in-touch-section .get-in-touch-option.mobile-revealed {
+    opacity: 1 !important;
+    transform: translate3d(0, 0, 0) !important;
+    transition:
+      opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+@media screen and (max-width: 991px) and (prefers-reduced-motion: reduce) {
+  html.mobile-scroll-reveal-ready .mobile-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

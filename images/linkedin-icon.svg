@@ -1,0 +1,5 @@
+<!-- Fallback SVG: use linkedin-icon.png in markup for the official "in" tile -->
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect width="32" height="32" rx="6.4" fill="#0A66C2"/>
+  <path fill="#ffffff" d="M10.2 10.4h2.4v11.2h-2.4V10.4zm1.2-4a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4zm3.6 4h2.2v1.1h.05c.52-.96 1.66-1.72 3.02-1.72 3.3 0 3.92 2.08 3.92 4.9v5.5h-2.3v-5.3c0-1.5-.02-3.44-2.13-3.44-2.08 0-2.4 1.6-2.4 3.16v5.58h-2.3V10.4z"/>
+</svg>
