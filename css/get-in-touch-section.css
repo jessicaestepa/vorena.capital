@@ -601,10 +601,51 @@ html.get-in-touch-motion-ready .get-in-touch-section.get-in-touch-options-visibl
   margin: 0 0 1.35rem;
 }
 
+.contact-intent-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.contact-intent-form-status {
+  margin: 0 0 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: var(--_spacing-radius---radius--md);
+  font-size: var(--_font-sizes---paragraphs--small);
+  line-height: 1.45;
+  letter-spacing: -.02em;
+}
+
+.contact-intent-form-status.is-success {
+  color: #1f4d38;
+  background-color: rgba(34, 120, 84, 0.1);
+  border: 1px solid rgba(34, 120, 84, 0.22);
+}
+
+.contact-intent-form-status.is-error {
+  color: #6b2030;
+  background-color: rgba(176, 48, 72, 0.08);
+  border: 1px solid rgba(176, 48, 72, 0.2);
+}
+
+.contact-intent-form-status.is-loading {
+  color: var(--primary);
+  background-color: rgba(48, 41, 97, 0.06);
+  border: 1px solid rgba(48, 41, 97, 0.12);
+}
+
 .contact-intent-form {
   display: flex;
   flex-direction: column;
   gap: 0;
+}
+
+.contact-intent-form.is-submitting .contact-intent-submit {
+  opacity: 0.82;
+  cursor: wait;
 }
 
 .contact-intent-fields-row {

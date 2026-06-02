@@ -977,6 +977,15 @@ html.nav-scroll-lock .navbar {
   padding-top: clamp(4rem, 8vw, 6.5rem);
 }
 
+.footer .container {
+  padding-left: clamp(1.5rem, 5vw, 3.75rem);
+  padding-right: clamp(1.5rem, 5vw, 3.75rem);
+}
+
+.footer-get-in-touch .footer-flex-wrap {
+  grid-column-gap: clamp(2rem, 4vw, 4rem);
+}
+
 .footer-social-links {
   display: flex;
   flex-flow: row wrap;
@@ -3456,19 +3465,43 @@ html.capital-scroll .banner-capital-mark {
 
 .banner-details {
   color: var(--eerie-black);
-  font-size: clamp(1.0625rem, 1.15vw, 1.3125rem);
-  line-height: 1.55;
+  font-size: clamp(1.25rem, 1.45vw, 1.5625rem);
+  line-height: 1.48;
   font-weight: var(--_font-weight-line-height---font-weights--regular);
   letter-spacing: -.02em;
 }
 
 .banner-details-mark {
-  font-size: 1.14em;
+  font-size: 1.12em;
   letter-spacing: -.025em;
 }
 
 .banner-details-wrap {
-  max-width: 31.5rem;
+  max-width: 40rem;
+}
+
+.banner-hero-scroll-btn.primary-button {
+  padding: .5rem .5rem .5rem 1.9rem;
+}
+
+.banner-hero-scroll-btn .primary-button-flex {
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+}
+
+.banner-hero-scroll-btn .primary-button-text,
+.banner-hero-scroll-btn .primary-button-text-hover {
+  font-size: clamp(1.0625rem, 1.15vw, 1.25rem);
+  line-height: 1.4;
+}
+
+.banner-hero-scroll-btn .primary-button-arrow-wrapper {
+  width: 2.875rem;
+  height: 2.875rem;
+}
+
+.banner-hero-scroll-btn .primary-button-arrow-wrap {
+  width: .75rem;
 }
 
 .banner-borders-wrapper {
@@ -5962,7 +5995,12 @@ html.capital-scroll .banner-capital-mark {
   }
 
   .banner-details-wrap {
-    max-width: 27rem;
+    max-width: 34rem;
+  }
+
+  .banner-hero-scroll-btn .primary-button-arrow-wrapper {
+    width: 2.5rem;
+    height: 2.5rem;
   }
 
   .banner-borders-wrapper {
@@ -9677,6 +9715,8 @@ html.whos-behind-motion-ready .whos-behind-section.whos-behind-visible .whos-beh
   height: 2rem;
   flex: none;
   object-fit: contain;
+  filter: none;
+  transition: filter 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @media (hover: hover) {
@@ -9698,6 +9738,11 @@ html.whos-behind-motion-ready .whos-behind-section.whos-behind-visible .whos-beh
   .whos-behind-spotlight-card:hover .whos-behind-spotlight-desc,
   .whos-behind-spotlight-card:focus-within .whos-behind-spotlight-desc {
     color: rgba(255, 255, 255, 0.76);
+  }
+
+  .whos-behind-spotlight-card:hover .whos-behind-spotlight-linkedin-icon,
+  .whos-behind-spotlight-card:focus-within .whos-behind-spotlight-linkedin-icon {
+    filter: brightness(0) invert(1);
   }
 
   .whos-behind-spotlight-linkedin:hover,
@@ -9732,6 +9777,10 @@ html.whos-behind-motion-ready .whos-behind-section.whos-behind-visible .whos-beh
   .whos-behind-spotlight-desc {
     color: rgba(255, 255, 255, 0.76);
   }
+
+  .whos-behind-spotlight-linkedin-icon {
+    filter: brightness(0) invert(1);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -9756,6 +9805,10 @@ html.whos-behind-motion-ready .whos-behind-section.whos-behind-visible .whos-beh
 
   .whos-behind-spotlight-desc {
     color: rgba(255, 255, 255, 0.76);
+  }
+
+  .whos-behind-spotlight-linkedin-icon {
+    filter: brightness(0) invert(1);
   }
 }
 

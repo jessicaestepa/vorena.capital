@@ -1,0 +1,38 @@
+Contact form email notifications (Supabase Edge Function + Resend)
+================================================================
+
+SECURITY
+- Never put sb_secret_* or service_role keys in js/supabase-config.js (public site).
+- Use sb_publishable_* (anon) in the browser only.
+- Rotate any secret key that was shared in chat or committed by mistake.
+
+1) Browser config (js/supabase-config.js)
+   - url: https://vebkqcijfauvmtrblbeq.supabase.co
+   - anonKey: your sb_publishable_... key from Dashboard → Settings → API
+
+2) Resend (https://resend.com)
+   - Create API key
+   - Verify sending domain (or use onboarding@resend.dev for testing)
+
+3) Deploy Edge Function (Supabase CLI)
+   supabase login
+   supabase link --project-ref vebkqcijfauvmtrblbeq
+   supabase secrets set RESEND_API_KEY=re_xxxx
+   supabase secrets set NOTIFY_TO=jessica@vorena.capital
+   supabase secrets set FROM_EMAIL="vorena Contact <hello@vorenacapital.com>"
+   supabase secrets set WEBHOOK_SECRET=your-random-long-string
+   supabase functions deploy notify-contact-submission --no-verify-jwt
+
+4) Database Webhook (Dashboard → Database → Webhooks → Create)
+   - Name: contact_submission_notify
+   - Table: contact_submissions
+   - Events: Insert
+   - Type: Supabase Edge Function
+   - Function: notify-contact-submission
+   OR HTTP POST to:
+   https://vebkqcijfauvmtrblbeq.supabase.co/functions/v1/notify-contact-submission
+   Header: Authorization: Bearer <WEBHOOK_SECRET>
+
+5) Test
+   - Submit a form on contact/business.html or contact/connect.html
+   - Check Table Editor + inbox at NOTIFY_TO

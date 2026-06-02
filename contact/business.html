@@ -51,8 +51,9 @@
           <div class="contact-intent-form-panel">
             <div class="contact-intent-form-panel-inner">
               <h2 class="contact-intent-form-title" data-i18n="contactIntent.formTitle">Start the conversation</h2>
-              <form action="mailto:hello@vorenacapital.com" method="post" enctype="text/plain" class="contact-intent-form">
-                <input type="hidden" name="source" value="business">
+              <p class="contact-intent-form-status" role="status" aria-live="polite" hidden></p>
+              <form class="contact-intent-form" data-intent="business" novalidate>
+                <input type="text" name="_gotcha" class="contact-intent-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <div class="contact-intent-fields-row">
                   <div class="contact-intent-field">
                     <label for="name" data-i18n="contactIntent.nameLabel">Name</label>
@@ -85,6 +86,8 @@
       </div>
     </main>
   </div>
+  <script src="../js/supabase-config.js" type="text/javascript"></script>
   <script src="../js/i18n.js" type="text/javascript"></script>
+  <script src="../js/contact-form.js" type="text/javascript"></script>
 </body>
 </html>

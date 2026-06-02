@@ -36,10 +36,10 @@
       'companies.headingOur': 'Our',
       'companies.headingMark': 'Companies',
       'companies.papercheck.name': 'Papercheck',
-      'companies.papercheck.industry': 'Document Review',
+      'companies.papercheck.industry': 'Services',
       'companies.papercheck.desc': 'Expert editing for books, scientific papers, and academic writing, with a back-office optimized for human editors using AI.',
       'companies.aitextspeak.name': 'AITextSpeak',
-      'companies.aitextspeak.industry': 'Text-to-Speech',
+      'companies.aitextspeak.industry': 'SaaS',
       'companies.aitextspeak.desc': 'AI voice and text tools for faster content and communication workflows.',
       'companies.stealth.name': 'In stealth',
       'companies.stealth.status': 'Soon to reveal',
@@ -62,9 +62,9 @@
       'footer.copyright': '© 2026 vorena capital',
       'getInTouch.heading': 'GET IN TOUCH',
       'getInTouch.business.title': 'I own a business',
-      'getInTouch.business.desc': "You're a founder or owner curious about what vorena could do with your company.",
+      'getInTouch.business.desc': "You're a founder or owner curious what vorena could do with your company.",
       'getInTouch.connect.title': 'I want to know more about vorena',
-      'getInTouch.connect.desc': "You're interested in how we build, acquire, and operate.",
+      'getInTouch.connect.desc': "You're curious how we acquire, operate, and grow.",
       'contactIntent.back': '← Back to home',
       'contactIntent.formTitle': 'Start the conversation',
       'contactIntent.business.eyebrow': 'Business inquiry',
@@ -86,7 +86,11 @@
       'contactIntent.emailLabel': 'Email',
       'contactIntent.companyLabel': 'Company',
       'contactIntent.messageLabel': 'Message',
-      'contactIntent.submit': 'Send message'
+      'contactIntent.submit': 'Send message',
+      'contactIntent.sending': 'Sending…',
+      'contactIntent.success': "Thanks — we received your message and will reply soon.",
+      'contactIntent.error': 'Something went wrong. Please try again or email jessica@vorena.capital.',
+      'contactIntent.errorConfig': 'Form is not connected yet. Please email jessica@vorena.capital.'
     },
     es: {
       'nav.manifesto': 'Manifiesto',
@@ -122,10 +126,10 @@
       'companies.headingOur': 'Nuestras',
       'companies.headingMark': 'Empresas',
       'companies.papercheck.name': 'Papercheck',
-      'companies.papercheck.industry': 'Revisión de documentos',
+      'companies.papercheck.industry': 'Servicios',
       'companies.papercheck.desc': 'Empresa de revisión humana de documentos científicos, publicaciones periodísticas y libros',
       'companies.aitextspeak.name': 'AITextSpeak',
-      'companies.aitextspeak.industry': 'Texto a voz',
+      'companies.aitextspeak.industry': 'SaaS',
       'companies.aitextspeak.desc': 'Plataforma de texto a voz enfocada en el nicho de creación de contenido',
       'companies.stealth.name': 'En stealth',
       'companies.stealth.status': 'Próximamente',
@@ -147,10 +151,10 @@
       'footer.social.linkedin': 'LinkedIn',
       'footer.copyright': '© 2026 vorena capital',
       'getInTouch.heading': 'CONTÁCTANOS',
-      'getInTouch.business.title': 'Tengo un negocio',
-      'getInTouch.business.desc': 'Eres fundador o dueño y quieres saber qué podría hacer vorena con tu empresa.',
+      'getInTouch.business.title': 'Tengo una empresa',
+      'getInTouch.business.desc': 'Eres founder o dueño y quieres saber qué podría hacer vorena por tu empresa.',
       'getInTouch.connect.title': 'Quiero saber más sobre vorena',
-      'getInTouch.connect.desc': 'Te interesa cómo construimos, adquirimos y operamos.',
+      'getInTouch.connect.desc': 'Quieres saber más sobre cómo adquirimos, operamos y hacemos crecer compañías.',
       'contactIntent.back': '← Volver al inicio',
       'contactIntent.formTitle': 'Inicia la conversación',
       'contactIntent.business.eyebrow': 'Consulta de negocio',
@@ -172,7 +176,20 @@
       'contactIntent.emailLabel': 'Correo',
       'contactIntent.companyLabel': 'Empresa',
       'contactIntent.messageLabel': 'Mensaje',
-      'contactIntent.submit': 'Enviar mensaje'
+      'contactIntent.submit': 'Enviar mensaje',
+      'contactIntent.sending': 'Enviando…',
+      'contactIntent.success': 'Gracias — recibimos tu mensaje y te responderemos pronto.',
+      'contactIntent.error': 'Algo salió mal. Intenta de nuevo o escribe a jessica@vorena.capital.',
+      'contactIntent.errorConfig': 'El formulario aún no está conectado. Escribe a jessica@vorena.capital.'
+    }
+  };
+
+  window.vorenaI18n = {
+    getLang: getLang,
+    t: function (key) {
+      var lang = getLang();
+      var strings = translations[lang] || translations.en;
+      return strings[key] || translations.en[key] || '';
     }
   };
 
