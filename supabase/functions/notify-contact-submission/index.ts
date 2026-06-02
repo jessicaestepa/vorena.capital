@@ -12,6 +12,7 @@ type ContactRecord = {
   name?: string;
   email?: string;
   company?: string | null;
+  role?: string | null;
   message?: string;
   locale?: string;
   page_path?: string | null;
@@ -30,6 +31,9 @@ function intentLabel(intent: string | undefined, locale: string | undefined) {
   if (intent === "business") {
     return isEs ? "Consulta de negocio" : "Business inquiry";
   }
+  if (intent === "talent") {
+    return isEs ? "Talento / Trabaja con nosotros" : "Talent / Work with us";
+  }
   return isEs ? "Consulta general" : "General inquiry";
 }
 
@@ -47,13 +51,17 @@ function buildEmail(record: ContactRecord) {
   var name = record.name ?? "—";
   var email = record.email ?? "—";
   var company = record.company?.trim() || "—";
+  var role = record.role?.trim() || "—";
   var message = record.message ?? "—";
   var page = record.page_path ?? "—";
   var when = record.created_at
     ? new Date(record.created_at).toISOString()
     : new Date().toISOString();
 
-  var subject = `[vorena] ${label} — ${name}`;
+  var subject =
+    intent === "talent" && role !== "—"
+      ? `[vorena] ${label} — ${role} — ${name}`
+      : `[vorena] ${label} — ${name}`;
 
   var html = `
     <h2 style="font-family:system-ui,sans-serif;color:#302961;">New contact form submission</h2>
@@ -62,6 +70,7 @@ function buildEmail(record: ContactRecord) {
       <tr><td style="padding:6px 12px 6px 0;color:#666;">Name</td><td>${escapeHtml(name)}</td></tr>
       <tr><td style="padding:6px 12px 6px 0;color:#666;">Email</td><td><a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></td></tr>
       <tr><td style="padding:6px 12px 6px 0;color:#666;">Company</td><td>${escapeHtml(company)}</td></tr>
+      <tr><td style="padding:6px 12px 6px 0;color:#666;">Role</td><td>${escapeHtml(role)}</td></tr>
       <tr><td style="padding:6px 12px 6px 0;color:#666;">Locale</td><td>${escapeHtml(record.locale ?? "en")}</td></tr>
       <tr><td style="padding:6px 12px 6px 0;color:#666;">Page</td><td>${escapeHtml(page)}</td></tr>
       <tr><td style="padding:6px 12px 6px 0;color:#666;">Submitted</td><td>${escapeHtml(when)}</td></tr>
@@ -75,6 +84,7 @@ function buildEmail(record: ContactRecord) {
     `Name: ${name}`,
     `Email: ${email}`,
     `Company: ${company}`,
+    `Role: ${role}`,
     `Locale: ${record.locale ?? "en"}`,
     `Page: ${page}`,
     `Submitted: ${when}`,

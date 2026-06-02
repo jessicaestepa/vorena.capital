@@ -35,10 +35,10 @@
   <meta content="Webflow" name="generator">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/vorena-capital.webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/get-in-touch-section.css" rel="stylesheet" type="text/css">
+  <link href="css/vorena-capital.webflow.css?v=16" rel="stylesheet" type="text/css">
+  <link href="css/get-in-touch-section.css?v=15" rel="stylesheet" type="text/css">
   <link href="css/mobile-scroll-reveal.css" rel="stylesheet" type="text/css">
-  <style>html.w-mod-js:not(.w-mod-ix3) :is(.primary-button-text, .primary-button-text-hover, .primary-button-arrow, .primary-button-arrow-hover, .after-banner-wrapper, .banner-letter-o, .banner-letter-o-fill, .after-banner-content-wrap, .after-banner-ticker-wrap, .after-banner-inner, .after-banner-wrap, .single-banner-letter._01, .single-banner-letter._02, .single-banner-letter._03, .single-banner-letter._04, .single-banner-letter._05) {visibility: hidden !important;}</style>
+  <style>html.w-mod-js:not(.w-mod-ix3) :is(.primary-button-text, .primary-button-text-hover, .primary-button-arrow, .primary-button-arrow-hover, .after-banner-wrapper, .banner-letter-o, .banner-letter-o-fill, .after-banner-content-wrap, .after-banner-ticker-wrap:not(.work-with-us-display-ticker), .after-banner-inner, .after-banner-wrap, .single-banner-letter._01, .single-banner-letter._02, .single-banner-letter._03, .single-banner-letter._04, .single-banner-letter._05) {visibility: hidden !important;}</style>
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
@@ -64,8 +64,8 @@
                   <a href="#whos-behind" class="single-nav-link w-inline-block" data-nav-section="whos-behind">
                     <div data-i18n="nav.whosBehind">Who's behind</div>
                   </a>
-                  <a href="#get-in-touch" class="single-nav-link w-inline-block" data-nav-section="get-in-touch">
-                    <div data-i18n="nav.getInTouch">Get in touch</div>
+                  <a href="#get-in-touch" class="single-nav-link w-inline-block" data-nav-section="get-in-touch" data-scroll-target="work-bar">
+                    <div data-i18n="nav.openRoles">Open roles</div>
                   </a>
                 </div>
               </div>
@@ -79,7 +79,7 @@
                   </div>
                 </div>
                 <div class="nav-button-wrap">
-                  <a data-wf--primary-button--variant="blue" href="#get-in-touch" class="primary-button w-variant-4c2497dc-c520-3049-f2ee-2eb4bb579d66 w-inline-block">
+                  <a data-wf--primary-button--variant="blue" href="#get-in-touch" class="primary-button w-variant-4c2497dc-c520-3049-f2ee-2eb4bb579d66 w-inline-block" data-scroll-target="content">
                     <div class="primary-button-flex">
                       <div class="primary-button-text-wrap">
                         <div class="primary-button-text w-variant-4c2497dc-c520-3049-f2ee-2eb4bb579d66" data-i18n="nav.getInTouch">Get in touch</div>
@@ -134,10 +134,10 @@
                                       <div class="navigation-link-border-inner"></div>
                                     </div>
                                   </a>
-                                  <a href="#get-in-touch" class="single-navigation-links w-inline-block" data-nav-section="get-in-touch">
+                                  <a href="#get-in-touch" class="single-navigation-links w-inline-block" data-nav-section="get-in-touch" data-scroll-target="work-bar">
                                     <div class="navigation-inline-wrap">
                                       <div class="navigation-text-flex">
-                                        <div class="navigation-link-text" data-i18n="nav.getInTouch">Get in touch</div>
+                                        <div class="navigation-link-text" data-i18n="nav.openRoles">Open roles</div>
                                         <div class="navigation-link-count">(04)</div>
                                       </div>
                                     </div>
@@ -147,7 +147,7 @@
                                   </a>
                                 </div>
                                 <div class="navigation-button-wrapper">
-                                  <a href="#get-in-touch" class="navigation-button w-inline-block">
+                                  <a href="#get-in-touch" class="navigation-button w-inline-block" data-scroll-target="content">
                                     <div class="navigation-button-text-wrap">
                                       <div class="navigation-button-text" data-i18n="nav.getInTouch">Get in touch</div>
                                       <div class="navigation-button-text absolute" data-i18n="nav.getInTouch">Get in touch</div>
@@ -212,6 +212,11 @@
                   </div>
                   <div class="primary-button-hover-bg"></div>
                 </a>
+              </div>
+              <div class="banner-mobile-figure" aria-hidden="true">
+                <div class="banner-mobile-figure-portal">
+                  <img src="images/new_banner.jpg?v=1" loading="eager" fetchpriority="high" alt="" class="banner-mobile-figure-img">
+                </div>
               </div>
             </div>
             <div class="banner-letters-wrap">
@@ -357,7 +362,7 @@
         })();
       </script>
     </section>
-    <div class="manifesto-companies-divider" aria-hidden="true"></div>
+    <div class="mobile-section-divider manifesto-companies-divider" aria-hidden="true"></div>
     <section id="companies" class="section companies-section">
       <div class="container">
         <div class="services-wrapper companies-wrapper companies-inner">
@@ -476,6 +481,7 @@
         </div>
       </div>
     </section>
+    <div class="mobile-section-divider companies-whos-divider" aria-hidden="true"></div>
     <section id="whos-behind" class="section whos-behind-section">
       <div class="container whos-behind-container">
         <div class="whos-behind-editorial">
@@ -497,12 +503,13 @@
             <div class="whos-behind-spotlight-panel">
               <div class="whos-behind-spotlight-hover-bg" aria-hidden="true"></div>
               <div class="whos-behind-spotlight-content">
+                <p class="whos-behind-spotlight-eyebrow" data-i18n="whosBehind.card.eyebrow">FOUNDER</p>
                 <h3 class="whos-behind-spotlight-name" data-i18n="whosBehind.profileName">Jessica Maldonado</h3>
                 <p class="whos-behind-spotlight-role" data-i18n="whosBehind.subtitle">Founder &amp; CEO</p>
                 <div class="whos-behind-spotlight-desc" data-i18n="whosBehind.card.desc" data-i18n-mode="html">
-                  <p>Jessica is a finance professional with 5+ years in investments and operations at high-growth companies. She started in finance, then moved into operations at Rappi, Colombia's first unicorn, before becoming the first employee at Latin Leap, a LATAM venture capital fund.</p>
-                  <p>As Founder &amp; CEO of vorena capital, she acquires traditional businesses and scales them with technology. She's also an angel investor. Colombian operator based in Mexico City.</p>
+                  <p>I learned how companies actually work operating at Rappi, then built a fund from scratch as the first hire at Latin Leap. Then I stopped advising and started buying, acquiring and transforming two companies with my own capital, and building the AI tools myself.</p>
                 </div>
+                <p class="whos-behind-spotlight-personal" data-i18n="whosBehind.card.personal">Marathoner and triathlete. Serial matcha taster. A believer that the best operators come from LATAM.</p>
                 <a href="https://www.linkedin.com/in/jessicamaldonadoestepa" target="_blank" rel="noopener noreferrer" class="whos-behind-spotlight-linkedin w-inline-block" data-i18n-aria="whosBehind.linkedinAria" aria-label="View Jessica Maldonado on LinkedIn">
                   <img src="images/linkedin-icon.png" loading="lazy" alt="" class="whos-behind-spotlight-linkedin-icon" width="32" height="32">
                 </a>
@@ -512,6 +519,7 @@
         </div>
       </div>
     </section>
+    <div class="mobile-section-divider whos-get-in-touch-divider" aria-hidden="true"></div>
     <section id="get-in-touch" class="section get-in-touch-section" aria-labelledby="get-in-touch-heading">
       <div class="container get-in-touch-container">
         <div class="get-in-touch-stage">
@@ -551,15 +559,192 @@
             </div>
           </div>
         </div>
+        <button type="button" class="get-in-touch-work-bar" id="work-with-us-trigger" aria-expanded="false" aria-controls="work-with-us-slideout" data-i18n-aria="getInTouch.workWithUs.barLabelAria">
+          <span class="get-in-touch-work-bar-glow" aria-hidden="true"></span>
+          <span class="get-in-touch-work-bar-inner">
+            <span class="get-in-touch-work-bar-label" data-i18n="getInTouch.workWithUs.barLabel" data-i18n-mode="html">Want to w<span class="work-bar-vorena-o" aria-hidden="true"><span class="work-bar-vorena-o-ring"><span class="work-bar-vorena-o-fill"></span></span></span>rk with us?</span>
+            <span class="get-in-touch-work-bar-cta" aria-hidden="true">
+              <span class="get-in-touch-work-bar-cta-circle">
+                <img src="images/Button-Arrow-Blue.svg" loading="lazy" alt="" class="get-in-touch-work-bar-cta-icon">
+              </span>
+            </span>
+          </span>
+        </button>
       </div>
     </section>
+    <div id="work-with-us-slideout" class="editorial-slideout" aria-hidden="true">
+      <div class="editorial-slideout-scrim" data-slideout-close tabindex="-1"></div>
+      <div class="editorial-slideout-frame" role="dialog" aria-modal="true" aria-labelledby="work-with-us-panel-heading">
+        <div class="editorial-slideout-panel-wrap">
+          <div class="editorial-slideout-panel">
+            <button type="button" class="editorial-slideout-close" data-slideout-close data-i18n-aria="getInTouch.workWithUs.closeAria" aria-label="Close panel">
+              <span class="editorial-slideout-close-icon" aria-hidden="true"></span>
+            </button>
+            <div class="navigation-bg-wrap editorial-slideout-bg" aria-hidden="true">
+              <div class="navigation-bg-top"></div>
+              <div class="navigation-bg-bottom"></div>
+              <div class="editorial-slideout-bg-grid" aria-hidden="true"></div>
+            </div>
+            <div class="editorial-slideout-panel-content">
+              <div class="editorial-slideout-heading-wrap">
+                <div class="after-banner-ticker-wrap manifesto-display-ticker work-with-us-display-ticker" aria-labelledby="work-with-us-panel-heading">
+                  <div class="after-banner-ticker-flex work-with-us-ticker-flex">
+                    <div class="after-banner-ticker-item">
+                      <h2 id="work-with-us-panel-heading" class="after-banner-ticker-text manifesto-display-title editorial-slideout-heading"><span class="after-banner-ticker-text-italic">* </span><span data-i18n="getInTouch.workWithUs.panelTitle">Work with us</span><span class="after-banner-ticker-text-italic"> * </span></h2>
+                    </div>
+                    <div class="after-banner-ticker-item" aria-hidden="true">
+                      <div class="after-banner-ticker-text manifesto-display-title editorial-slideout-heading"><span class="after-banner-ticker-text-italic">* </span><span data-i18n="getInTouch.workWithUs.panelTitle">Work with us</span><span class="after-banner-ticker-text-italic"> * </span></div>
+                    </div>
+                    <div class="after-banner-ticker-item" aria-hidden="true">
+                      <div class="after-banner-ticker-text manifesto-display-title editorial-slideout-heading"><span class="after-banner-ticker-text-italic">* </span><span data-i18n="getInTouch.workWithUs.panelTitle">Work with us</span><span class="after-banner-ticker-text-italic"> * </span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="editorial-slideout-body">
+                <p data-i18n="getInTouch.workWithUs.body.p1" data-i18n-mode="html">We're looking for <span class="work-with-us-body-accent">operators</span>. People who'd rather learn by doing than just analyze.</p>
+                <p data-i18n="getInTouch.workWithUs.body.p2">Overachievers who are genuinely driven and already know a thing or two about business, finance, and tech. We love people who are intellectually pliable and weirdly self-motivated.</p>
+                <p data-i18n="getInTouch.workWithUs.body.p3">We have a soft spot for those with a high tolerance for discomfort (athletes, or anyone who's played sports seriously), who've written interesting opinions about things, who are honest, funny, confident but humble. People who believe in the talent and potential of LATAM, and who tinker with AI almost daily (share your GitHub ;)).</p>
+                <p data-i18n="getInTouch.workWithUs.body.p4" data-i18n-mode="html">And above all, people who <span class="work-with-us-body-accent">believe what we believe</span>: that <span class="work-with-us-body-accent">technology is the great enabler of global growth</span>, and that bringing it into overlooked businesses is <span class="work-with-us-body-accent">where the next explosion of value is hiding</span>.</p>
+                <p data-i18n="getInTouch.workWithUs.body.p5">You don't need all of this. But if you've got some of it, let's talk.</p>
+              </div>
+              <div class="work-with-us-roles-block">
+                <p class="work-with-us-roles-label" data-i18n="getInTouch.workWithUs.openRoles">Open roles</p>
+                <div class="work-with-us-roles">
+                  <div class="work-with-us-role-item" data-role="Applied AI Engineer">
+                    <div class="work-with-us-role-shell">
+                      <div class="work-with-us-role-bg" aria-hidden="true"></div>
+                      <div class="work-with-us-role-content">
+                        <button type="button" class="work-with-us-role-trigger" aria-expanded="false">
+                          <span class="work-with-us-role-title">Applied AI Engineer</span>
+                          <span class="work-with-us-role-icon" aria-hidden="true">
+                            <img src="images/FAQ-Plus.svg" loading="lazy" alt="" class="work-with-us-role-plus">
+                            <img src="images/FAQ-Minus.svg" loading="lazy" alt="" class="work-with-us-role-minus">
+                          </span>
+                        </button>
+                        <div class="work-with-us-role-expand" aria-hidden="true">
+                          <div class="work-with-us-role-expand-inner">
+                            <div class="work-with-us-role-divider"></div>
+                            <p class="work-with-us-role-lead" data-i18n="getInTouch.workWithUs.roleApplyLead">Tell us about yourself and why you'd be a fit.</p>
+                            <form class="work-with-us-form" data-intent="talent" novalidate>
+                              <input type="hidden" name="role" value="Applied AI Engineer">
+                              <input type="text" name="_gotcha" class="contact-intent-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+                              <p class="work-with-us-form-status" role="status" aria-live="polite" hidden></p>
+                              <div class="work-with-us-form-field">
+                                <label for="work-with-us-name-engineer" data-i18n="getInTouch.workWithUs.formName">Name</label>
+                                <input class="work-with-us-form-input" id="work-with-us-name-engineer" name="name" type="text" required autocomplete="name">
+                              </div>
+                              <div class="work-with-us-form-field">
+                                <label for="work-with-us-email-engineer" data-i18n="getInTouch.workWithUs.formEmail">Email</label>
+                                <input class="work-with-us-form-input" id="work-with-us-email-engineer" name="email" type="email" required autocomplete="email">
+                              </div>
+                              <div class="work-with-us-form-field">
+                                <label for="work-with-us-message-engineer" data-i18n="getInTouch.workWithUs.formMessage">A few words</label>
+                                <textarea class="work-with-us-form-textarea" id="work-with-us-message-engineer" name="message" rows="3" required data-i18n-placeholder="getInTouch.workWithUs.formMessagePlaceholder" placeholder="LinkedIn, GitHub, or why you'd be a fit"></textarea>
+                              </div>
+                              <button type="submit" class="work-with-us-panel-cta work-with-us-form-submit primary-button w-variant-4c2497dc-c520-3049-f2ee-2eb4bb579d66">
+                                <span class="work-with-us-form-submit-text" data-i18n="getInTouch.workWithUs.panelCta">Get in touch</span>
+                              </button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="work-with-us-role-item" data-role="AI Operations">
+                    <div class="work-with-us-role-shell">
+                      <div class="work-with-us-role-bg" aria-hidden="true"></div>
+                      <div class="work-with-us-role-content">
+                        <button type="button" class="work-with-us-role-trigger" aria-expanded="false">
+                          <span class="work-with-us-role-title">AI Operations</span>
+                          <span class="work-with-us-role-icon" aria-hidden="true">
+                            <img src="images/FAQ-Plus.svg" loading="lazy" alt="" class="work-with-us-role-plus">
+                            <img src="images/FAQ-Minus.svg" loading="lazy" alt="" class="work-with-us-role-minus">
+                          </span>
+                        </button>
+                        <div class="work-with-us-role-expand" aria-hidden="true">
+                          <div class="work-with-us-role-expand-inner">
+                            <div class="work-with-us-role-divider"></div>
+                            <p class="work-with-us-role-lead" data-i18n="getInTouch.workWithUs.roleApplyLead">Tell us about yourself and why you'd be a fit.</p>
+                            <form class="work-with-us-form" data-intent="talent" novalidate>
+                              <input type="hidden" name="role" value="AI Operations">
+                              <input type="text" name="_gotcha" class="contact-intent-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+                              <p class="work-with-us-form-status" role="status" aria-live="polite" hidden></p>
+                              <div class="work-with-us-form-field">
+                                <label for="work-with-us-name-operations" data-i18n="getInTouch.workWithUs.formName">Name</label>
+                                <input class="work-with-us-form-input" id="work-with-us-name-operations" name="name" type="text" required autocomplete="name">
+                              </div>
+                              <div class="work-with-us-form-field">
+                                <label for="work-with-us-email-operations" data-i18n="getInTouch.workWithUs.formEmail">Email</label>
+                                <input class="work-with-us-form-input" id="work-with-us-email-operations" name="email" type="email" required autocomplete="email">
+                              </div>
+                              <div class="work-with-us-form-field">
+                                <label for="work-with-us-message-operations" data-i18n="getInTouch.workWithUs.formMessage">A few words</label>
+                                <textarea class="work-with-us-form-textarea" id="work-with-us-message-operations" name="message" rows="3" required data-i18n-placeholder="getInTouch.workWithUs.formMessagePlaceholder" placeholder="LinkedIn, GitHub, or why you'd be a fit"></textarea>
+                              </div>
+                              <button type="submit" class="work-with-us-panel-cta work-with-us-form-submit primary-button w-variant-4c2497dc-c520-3049-f2ee-2eb4bb579d66">
+                                <span class="work-with-us-form-submit-text" data-i18n="getInTouch.workWithUs.panelCta">Get in touch</span>
+                              </button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="work-with-us-role-item" data-role="Operations Architect">
+                    <div class="work-with-us-role-shell">
+                      <div class="work-with-us-role-bg" aria-hidden="true"></div>
+                      <div class="work-with-us-role-content">
+                        <button type="button" class="work-with-us-role-trigger" aria-expanded="false">
+                          <span class="work-with-us-role-title">Operations Architect</span>
+                          <span class="work-with-us-role-icon" aria-hidden="true">
+                            <img src="images/FAQ-Plus.svg" loading="lazy" alt="" class="work-with-us-role-plus">
+                            <img src="images/FAQ-Minus.svg" loading="lazy" alt="" class="work-with-us-role-minus">
+                          </span>
+                        </button>
+                        <div class="work-with-us-role-expand" aria-hidden="true">
+                          <div class="work-with-us-role-expand-inner">
+                            <div class="work-with-us-role-divider"></div>
+                            <p class="work-with-us-role-lead" data-i18n="getInTouch.workWithUs.roleApplyLead">Tell us about yourself and why you'd be a fit.</p>
+                            <form class="work-with-us-form" data-intent="talent" novalidate>
+                              <input type="hidden" name="role" value="Operations Architect">
+                              <input type="text" name="_gotcha" class="contact-intent-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+                              <p class="work-with-us-form-status" role="status" aria-live="polite" hidden></p>
+                              <div class="work-with-us-form-field">
+                                <label for="work-with-us-name-architect" data-i18n="getInTouch.workWithUs.formName">Name</label>
+                                <input class="work-with-us-form-input" id="work-with-us-name-architect" name="name" type="text" required autocomplete="name">
+                              </div>
+                              <div class="work-with-us-form-field">
+                                <label for="work-with-us-email-architect" data-i18n="getInTouch.workWithUs.formEmail">Email</label>
+                                <input class="work-with-us-form-input" id="work-with-us-email-architect" name="email" type="email" required autocomplete="email">
+                              </div>
+                              <div class="work-with-us-form-field">
+                                <label for="work-with-us-message-architect" data-i18n="getInTouch.workWithUs.formMessage">A few words</label>
+                                <textarea class="work-with-us-form-textarea" id="work-with-us-message-architect" name="message" rows="3" required data-i18n-placeholder="getInTouch.workWithUs.formMessagePlaceholder" placeholder="LinkedIn, GitHub, or why you'd be a fit"></textarea>
+                              </div>
+                              <button type="submit" class="work-with-us-panel-cta work-with-us-form-submit primary-button w-variant-4c2497dc-c520-3049-f2ee-2eb4bb579d66">
+                                <span class="work-with-us-form-submit-text" data-i18n="getInTouch.workWithUs.panelCta">Get in touch</span>
+                              </button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <footer class="footer footer-get-in-touch" id="contact">
       <div class="footer-top-wrap">
         <div class="container">
           <div class="footer-flex-wrap">
             <div data-w-id="d6cef094-f9d6-3c17-acbb-669293611eaf" class="footer-content-wrap">
               <a href="#hero" class="footer-logo-wrap w-inline-block"><img loading="lazy" src="images/vorena-logo.png" alt="vorena capital" class="footer-logo" style="width:224px;height:auto;"></a>
-              <p class="footer-details" data-i18n="footer.tagline">vorena builds and operates AI-native companies.</p>
+              <p class="footer-details" data-i18n="footer.tagline">vorena acquires, operates, and grows overlooked companies.</p>
               <div class="footer-social-links">
                 <a href="https://www.linkedin.com/company/vorenacapital" target="_blank" rel="noopener noreferrer" class="cta-social-link-wrap w-inline-block">
                   <div class="cta-social-link-flex">
@@ -576,16 +761,15 @@
                   <div class="single-quick-links-wrapper">
                     <h6 class="quick-links-title" data-i18n="footer.pagesTitle">Pages</h6>
                     <div class="footer-links-flex">
-                      <div class="footer-links-row">
-                        <a href="#manifesto" class="footer-link" data-i18n="nav.manifesto">Manifesto</a>
-                        <div class="footer-link-divider"></div>
-                        <a href="#companies" class="footer-link" data-i18n="nav.companies">Companies</a>
-                      </div>
-                      <div class="footer-links-row">
-                        <a href="#whos-behind" class="footer-link" data-i18n="nav.whosBehind">Who's behind</a>
-                        <div class="footer-link-divider"></div>
-                        <a href="#contact" class="footer-link" data-i18n="nav.contact">Contact</a>
-                      </div>
+                      <a href="#manifesto" class="footer-link" data-i18n="nav.manifesto">Manifesto</a>
+                      <div class="footer-link-divider" aria-hidden="true"></div>
+                      <a href="#companies" class="footer-link" data-i18n="nav.companies">Companies</a>
+                      <div class="footer-link-divider" aria-hidden="true"></div>
+                      <a href="#whos-behind" class="footer-link" data-i18n="nav.whosBehind">Who's behind</a>
+                      <div class="footer-link-divider" aria-hidden="true"></div>
+                      <a href="#get-in-touch" class="footer-link" data-scroll-target="work-bar" data-i18n="nav.openRoles">Open roles</a>
+                      <div class="footer-link-divider" aria-hidden="true"></div>
+                      <a href="#get-in-touch" class="footer-link" data-scroll-target="content" data-i18n="nav.getInTouch">Get in touch</a>
                     </div>
                   </div>
                 </div>
@@ -613,7 +797,9 @@
   </div>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6a150cd4ebd882e2c9b3a0e1" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
-  <script src="js/i18n.js" type="text/javascript"></script>
+  <script src="js/i18n.js?v=13" type="text/javascript"></script>
+  <script src="js/supabase-config.js" type="text/javascript"></script>
+  <script src="js/contact-form.js?v=4" type="text/javascript"></script>
   <script src="https://cdn.prod.website-files.com/gsap/3.15.0/gsap.min.js" type="text/javascript"></script>
   <script src="https://cdn.prod.website-files.com/gsap/3.15.0/SplitText.min.js" type="text/javascript"></script>
   <script src="https://cdn.prod.website-files.com/gsap/3.15.0/ScrollTrigger.min.js" type="text/javascript"></script>
@@ -622,15 +808,23 @@
   <script src="js/companies.js" type="text/javascript"></script>
   <script src="js/whos-behind-motion.js" type="text/javascript"></script>
   <script src="js/get-in-touch-headline.js?v=7" type="text/javascript"></script>
-  <script src="js/get-in-touch-reveal.js?v=6" type="text/javascript"></script>
+  <script src="js/get-in-touch-reveal.js?v=8" type="text/javascript"></script>
+  <script src="js/work-with-us-panel.js?v=4" type="text/javascript"></script>
   <script src="js/mobile-scroll-reveal.js" type="text/javascript"></script>
   <script>
     (function() {
       var section = document.querySelector('.banner-section');
       if (!section) return;
       var root = document.documentElement;
+      var mobileMq = window.matchMedia('(max-width: 991px)');
       var ticking = false;
       function update() {
+        if (mobileMq.matches) {
+          root.style.setProperty('--scroll-progress', '0');
+          root.classList.add('show-navbar');
+          ticking = false;
+          return;
+        }
         var rect = section.getBoundingClientRect();
         var sectionTop = window.scrollY + rect.top;
         var scrollable = section.offsetHeight - window.innerHeight;
@@ -660,6 +854,21 @@
     (function() {
       if (!window.matchMedia('(max-width: 991px)').matches) return;
       document.documentElement.classList.add('show-capital', 'capital-scroll');
+
+      function markBannerMobileReady() {
+        document.documentElement.classList.add('banner-mobile-ready');
+      }
+
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        markBannerMobileReady();
+        return;
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', markBannerMobileReady, { once: true });
+      } else {
+        markBannerMobileReady();
+      }
     })();
 
     (function() {
@@ -877,24 +1086,98 @@
         }, 900);
       }
 
-      function snapGetInTouchScroll(behavior) {
-        var section = document.getElementById('get-in-touch');
-        if (!section) return;
-        var anchor = section.querySelector('.get-in-touch-stage') || section;
-        var top = anchor.getBoundingClientRect().top + window.scrollY - getNavOffset();
-        window.scrollTo({ top: Math.max(0, Math.round(top)), behavior: behavior || 'smooth' });
+      var getInTouchScrollAnim = null;
+
+      function prefersReducedScroll() {
+        return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       }
 
-      function scrollToGetInTouch() {
-        lockNavbar();
-        snapGetInTouchScroll('smooth');
-        setTimeout(function() {
-          snapGetInTouchScroll('auto');
-          if (typeof window.revealGetInTouchSection === 'function') {
-            window.revealGetInTouchSection();
+      function easeOutCubic(t) {
+        return 1 - Math.pow(1 - t, 3);
+      }
+
+      function getGetInTouchScrollTop(scrollTarget) {
+        var section = document.getElementById('get-in-touch');
+        if (!section) return 0;
+        var anchor;
+        var gap = 16;
+        if (scrollTarget === 'work-bar') {
+          anchor = section.querySelector('.get-in-touch-work-bar')
+            || section.querySelector('.get-in-touch-container')
+            || section;
+          gap = 12;
+        } else {
+          anchor = section.querySelector('.get-in-touch-content')
+            || section.querySelector('.get-in-touch-headline')
+            || section.querySelector('.get-in-touch-container')
+            || section;
+        }
+        return Math.max(0, Math.round(anchor.getBoundingClientRect().top + window.scrollY - getNavOffset() - gap));
+      }
+
+      function smoothScrollToY(targetY, onComplete) {
+        if (getInTouchScrollAnim) {
+          cancelAnimationFrame(getInTouchScrollAnim);
+          getInTouchScrollAnim = null;
+        }
+
+        if (prefersReducedScroll()) {
+          window.scrollTo(0, targetY);
+          if (onComplete) onComplete();
+          return;
+        }
+
+        var startY = window.scrollY;
+        var delta = targetY - startY;
+        if (Math.abs(delta) < 2) {
+          if (onComplete) onComplete();
+          return;
+        }
+
+        var duration = Math.min(1100, Math.max(640, Math.abs(delta) * 0.5));
+        var startTime = null;
+
+        function step(now) {
+          if (!startTime) startTime = now;
+          var progress = Math.min(1, (now - startTime) / duration);
+          var nextY = startY + delta * easeOutCubic(progress);
+          window.scrollTo(0, nextY);
+          if (progress < 1) {
+            getInTouchScrollAnim = requestAnimationFrame(step);
+            return;
           }
-          unlockNavbar();
-        }, 900);
+
+          getInTouchScrollAnim = null;
+          var settleY = targetY;
+          if (Math.abs(window.scrollY - settleY) > 2) {
+            window.scrollTo(0, settleY);
+          }
+          if (onComplete) onComplete();
+        }
+
+        getInTouchScrollAnim = requestAnimationFrame(step);
+      }
+
+      function scrollToGetInTouch(scrollTarget) {
+        lockNavbar();
+
+        if (typeof window.revealGetInTouchSection === 'function') {
+          window.revealGetInTouchSection({ immediate: true });
+        }
+
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            var targetY = getGetInTouchScrollTop(scrollTarget);
+            smoothScrollToY(targetY, function() {
+              var finalY = getGetInTouchScrollTop(scrollTarget);
+              if (Math.abs(window.scrollY - finalY) > 2) {
+                window.scrollTo(0, finalY);
+              }
+              unlockNavbar();
+              updateSpy();
+            });
+          });
+        });
       }
 
       function getSectionScrollTop(el) {
@@ -941,7 +1224,7 @@
         setActiveSection(null);
       }
 
-      function navigateToHash(hash, behavior) {
+      function navigateToHash(hash, behavior, scrollTarget) {
         if (!hash || hash.length < 2) return;
         var id = hash.slice(1);
         if (id === 'hero') {
@@ -962,12 +1245,12 @@
           return;
         }
         if (id === 'get-in-touch') {
-          scrollToGetInTouch();
+          scrollToGetInTouch(scrollTarget || 'content');
           return;
         }
-        var target = document.getElementById(id);
-        if (!target) return;
-        scrollToSection(target, behavior);
+        var targetEl = document.getElementById(id);
+        if (!targetEl) return;
+        scrollToSection(targetEl, behavior);
       }
 
       function isMobileNavOpen() {
@@ -1001,6 +1284,7 @@
       document.addEventListener('click', function(e) {
         var link = e.target.closest(
           '.navbar a[href^="#"], ' +
+          '.nav-button-wrap a[href^="#"], ' +
           'a.single-navigation-links[href^="#"], ' +
           'a.navigation-button[href^="#"], ' +
           'a[data-nav-section][href^="#"], ' +
@@ -1013,7 +1297,8 @@
           e.preventDefault();
           e.stopPropagation();
           closeMobileNav();
-          navigateToHash(hash, 'smooth');
+          var scrollTarget = link.getAttribute('data-scroll-target');
+          navigateToHash(hash, 'smooth', scrollTarget);
         }
       }, true);
 

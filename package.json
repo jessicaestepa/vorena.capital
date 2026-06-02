@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "python3 -m http.server 8080"
+    "dev": "python3 -m http.server 8080",
+    "build": "node scripts/generate-supabase-config.js"
   },
   "devDependencies": {
     "lottie-web": "^5.12.2"

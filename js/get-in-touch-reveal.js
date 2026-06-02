@@ -4,11 +4,12 @@
 
   var isMobile = window.matchMedia('(max-width: 991px)').matches;
   var panel = section.querySelector('.get-in-touch-panel');
-  var trigger = section.querySelector('.get-in-touch-stage') || section;
+  var trigger = section.querySelector('.get-in-touch-container') || section;
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var hasRevealed = false;
   var HEADLINE_DELAY_MS = 520;
   var OPTIONS_DELAY_MS = 680;
+  var WORK_BAR_DELAY_MS = 920;
 
   function markVisible() {
     section.classList.add('get-in-touch-visible');
@@ -29,12 +30,18 @@
 
   function markOptionsVisible() {
     section.classList.add('get-in-touch-options-visible');
+    section.classList.add('get-in-touch-work-bar-visible');
+  }
+
+  function markWorkBarVisible() {
+    section.classList.add('get-in-touch-work-bar-visible');
   }
 
   function ensureFinalState() {
     markVisible();
     markHeadlineVisible();
     markOptionsVisible();
+    markWorkBarVisible();
   }
 
   function playReveal() {
@@ -54,14 +61,21 @@
     if (isMobile) {
       window.setTimeout(markHeadlineVisible, HEADLINE_DELAY_MS);
       window.setTimeout(markOptionsVisible, OPTIONS_DELAY_MS);
+      window.setTimeout(markWorkBarVisible, WORK_BAR_DELAY_MS);
       return;
     }
 
     window.setTimeout(markHeadlineVisible, HEADLINE_DELAY_MS);
     window.setTimeout(markOptionsVisible, OPTIONS_DELAY_MS);
+    window.setTimeout(markWorkBarVisible, WORK_BAR_DELAY_MS);
   }
 
-  window.revealGetInTouchSection = function () {
+  window.revealGetInTouchSection = function (options) {
+    if (options && options.immediate) {
+      hasRevealed = true;
+      ensureFinalState();
+      return;
+    }
     playReveal();
   };
 

@@ -1002,6 +1002,14 @@ html.nav-scroll-lock .navbar {
   max-width: 19rem;
 }
 
+.footer-get-in-touch .footer-links-flex {
+  gap: 0.5rem;
+}
+
+.footer-get-in-touch .footer-link-divider {
+  display: block;
+}
+
 .footer-get-in-touch .copyright-text {
   color: var(--independence);
 }
@@ -1010,6 +1018,25 @@ html.nav-scroll-lock .navbar {
   border-top-color: rgba(48, 41, 97, 0.12);
   background-color: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(8px);
+}
+
+@media screen and (max-width: 991px) {
+  .footer-get-in-touch .quick-links-row.one {
+    max-width: 100%;
+  }
+
+  .footer-get-in-touch .footer-links-flex {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-column-gap: clamp(1.25rem, 6vw, 2rem);
+    grid-row-gap: 0.75rem;
+    align-items: start;
+    width: 100%;
+  }
+
+  .footer-get-in-touch .footer-link-divider {
+    display: none;
+  }
 }
 
 .section-divider {
@@ -2318,6 +2345,24 @@ html.nav-scroll-lock .navbar {
   margin: 0;
 }
 
+.banner-mobile-figure {
+  display: none;
+}
+
+.banner-mobile-figure-portal {
+  box-sizing: border-box;
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner-mobile-figure-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 ._404-content-wrap {
   text-align: center;
   max-width: 32rem;
@@ -3368,8 +3413,8 @@ html.capital-scroll .banner-capital-mark {
 
 @media screen and (max-width: 478px) {
   .banner-mobile-hero {
-    padding: 4rem 1rem 2.5rem;
-    gap: 1.25rem;
+    padding: 5.25rem 1.15rem 0.85rem;
+    gap: 1rem;
   }
 
   #about.section.about-us {
@@ -3398,8 +3443,18 @@ html.capital-scroll .banner-capital-mark {
   }
 
   .banner-mobile-content {
-    gap: 1rem;
+    gap: 1.15rem;
     max-width: 100%;
+  }
+
+  .banner-mobile-content .primary-button {
+    margin-top: 0.35rem;
+  }
+
+  .banner-mobile-figure-portal {
+    width: min(58vw, 13rem);
+    height: min(58vw, 13rem);
+    border-width: 0.55rem;
   }
 
   .hamburger-button {
@@ -5897,21 +5952,104 @@ html.capital-scroll .banner-capital-mark {
 
   .banner-wrapper {
     width: auto;
-    height: auto;
-    min-height: auto;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+  }
+
+  .banner-section {
+    overflow: visible;
+    margin-bottom: 0;
+  }
+
+  .banner-vh-wrap,
+  .banner-sticky-wrap,
+  .banner-wrapper {
+    max-height: none !important;
   }
 
   .banner-mobile-hero {
     display: flex;
     flex-flow: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.15rem;
     width: 100%;
-    padding: 4.5rem 1.25rem 3rem;
+    padding: 5.5rem 1.35rem 1rem;
     box-sizing: border-box;
+  }
+
+  .banner-mobile-brand {
+    margin-bottom: 0.15rem;
+  }
+
+  .banner-mobile-content {
+    margin-top: 0;
+    gap: 1.45rem;
+    max-width: 24rem;
+  }
+
+  .banner-mobile-title {
+    margin-bottom: 0.1rem;
+  }
+
+  .banner-mobile-details {
+    margin-bottom: 0.15rem;
+  }
+
+  .banner-mobile-content .primary-button {
+    margin-top: 0.55rem;
+  }
+
+  .banner-mobile-figure {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  html.banner-mobile-ready .banner-mobile-figure {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .banner-mobile-figure {
+      opacity: 0;
+      transform: translate3d(0, 0.85rem, 0) scale(0.97);
+      filter: blur(6px);
+      transition:
+        opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+      transition-delay: 0.12s;
+      will-change: opacity, transform, filter;
+    }
+
+    html.banner-mobile-ready .banner-mobile-figure {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+      filter: blur(0);
+    }
+  }
+
+  .banner-mobile-figure-portal {
+    width: min(64vw, 14.5rem);
+    height: min(64vw, 14.5rem);
+    border: 0.65rem solid #201c40;
+    box-shadow: 0 1.25rem 2.75rem rgba(32, 28, 64, 0.12);
+  }
+
+  .banner-mobile-figure-img {
+    object-position: 24% 38%;
+    transform: scale(1.08);
   }
 
   .banner-mobile-wordmark {
@@ -5947,12 +6085,14 @@ html.capital-scroll .banner-capital-mark {
   }
 
   .banner-vh-wrap {
-    height: auto;
+    height: auto !important;
+    min-height: 0;
   }
 
   .banner-sticky-wrap {
-    height: auto;
-    position: static;
+    height: auto !important;
+    min-height: 0;
+    position: static !important;
   }
 
   #about.section.about-us {
@@ -7592,6 +7732,17 @@ html.capital-scroll .banner-capital-mark {
     display: none;
   }
 
+  .footer-get-in-touch .footer-link-divider {
+    display: none;
+  }
+
+  .footer-get-in-touch .footer-links-flex {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-column-gap: 1.25rem;
+    grid-row-gap: 0.65rem;
+  }
+
   .quick-links-row {
     flex-flow: row;
   }
@@ -8639,13 +8790,35 @@ html.capital-scroll .banner-capital-mark {
 }
 
 @media screen and (max-width: 991px) {
-  .manifesto-section {
-    padding: 3rem 0 1.25rem;
-    scroll-margin-top: 6.5rem;
+  .mobile-section-divider,
+  .companies-whos-divider,
+  .whos-get-in-touch-divider {
+    display: block;
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    margin: clamp(2rem, 6vw, 2.75rem) 0;
+    padding: 0 clamp(1.25rem, 5vw, 2.5rem);
+    background: none;
+    pointer-events: none;
   }
 
-  .manifesto-companies-divider {
-    height: 1.25rem;
+  .mobile-section-divider::before,
+  .companies-whos-divider::before,
+  .whos-get-in-touch-divider::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(48, 41, 97, 0.08);
+  }
+
+  .manifesto-section {
+    padding: 1.15rem 0 0;
+    scroll-margin-top: 5.5rem;
   }
 
   .manifesto-inner {
@@ -8660,7 +8833,8 @@ html.capital-scroll .banner-capital-mark {
   }
 
   .manifesto-display-wrap {
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.25rem;
+    scroll-margin-top: 5.75rem;
   }
 
   .manifesto-display-title {
@@ -8721,11 +8895,14 @@ html.capital-scroll .banner-capital-mark {
 
 @media screen and (max-width: 478px) {
   .manifesto-section {
-    padding: 2.5rem 0 1rem;
+    padding: 0.85rem 0 0;
   }
 
-  .manifesto-companies-divider {
-    height: 0.75rem;
+  .mobile-section-divider,
+  .companies-whos-divider,
+  .whos-get-in-touch-divider {
+    margin: clamp(1.75rem, 5.5vw, 2.35rem) 0;
+    padding: 0 1.25rem;
   }
 
   .manifesto-inner {
@@ -8752,8 +8929,18 @@ html.capital-scroll .banner-capital-mark {
   }
 }
 
-/* ── Manifesto → Companies bridge ── */
+/* ── Section dividers (mobile lines; desktop gradient bridge on manifesto→companies) ── */
+.mobile-section-divider {
+  display: none;
+}
+
+.companies-whos-divider,
+.whos-get-in-touch-divider {
+  display: none;
+}
+
 .manifesto-companies-divider {
+  display: block;
   position: relative;
   z-index: 1;
   width: 100%;
@@ -8766,6 +8953,12 @@ html.capital-scroll .banner-capital-mark {
     rgba(245, 249, 255, 1) 100%
   );
   pointer-events: none;
+}
+
+.manifesto-companies-divider::before,
+.companies-whos-divider::before,
+.whos-get-in-touch-divider::before {
+  content: none;
 }
 
 .companies-section {
@@ -9286,15 +9479,23 @@ html.companies-motion-ready .companies-section.companies-visible .service-tabs-g
 @media screen and (max-width: 991px) {
   .companies-section {
     scroll-margin-top: 6rem;
-    margin-top: -0.25rem;
-    padding-top: 1.5rem;
-    padding-bottom: 3.5rem;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
     background: linear-gradient(
       180deg,
       rgba(245, 249, 255, 1) 0%,
       var(--white) 18%,
       var(--white) 100%
     );
+  }
+
+  .companies-section > .container {
+    padding-bottom: 3.5rem;
+  }
+
+  .whos-behind-section .whos-behind-container {
+    padding-bottom: 4rem;
   }
 
   .companies-section .service-tabs-grid-right {
@@ -9371,8 +9572,12 @@ html.companies-motion-ready .companies-section.companies-visible .service-tabs-g
 }
 
 @media screen and (max-width: 478px) {
-  .manifesto-companies-divider {
-    height: 2.75rem;
+  .companies-section > .container {
+    padding-bottom: 3rem;
+  }
+
+  .whos-behind-section .whos-behind-container {
+    padding-bottom: 3.25rem;
   }
 
   .companies-title-card-waves {
@@ -9663,7 +9868,18 @@ html.whos-behind-motion-ready .whos-behind-section.whos-behind-visible .whos-beh
   line-height: 1.02;
   font-weight: var(--_font-weight-line-height---font-weights--medium);
   letter-spacing: -.04em;
-  margin: 0 0 1rem;
+  margin: 0 0 0.75rem;
+  transition: color 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.whos-behind-spotlight-eyebrow {
+  color: var(--primary);
+  font-size: var(--_font-sizes---paragraphs--small);
+  line-height: 1.3;
+  font-weight: var(--_font-weight-line-height---font-weights--medium);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 0.65rem;
   transition: color 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -9674,7 +9890,7 @@ html.whos-behind-motion-ready .whos-behind-section.whos-behind-visible .whos-beh
   line-height: 1.45;
   font-weight: var(--_font-weight-line-height---font-weights--medium);
   letter-spacing: -.02em;
-  margin: 0 0 1.75rem;
+  margin: 0 0 1.35rem;
   transition: color 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -9698,12 +9914,25 @@ html.whos-behind-motion-ready .whos-behind-section.whos-behind-visible .whos-beh
   margin-bottom: 0;
 }
 
+.whos-behind-spotlight-personal {
+  color: rgba(48, 41, 97, 0.72);
+  font-size: clamp(0.9375rem, 1.1vw, 1rem);
+  line-height: 1.65;
+  font-weight: var(--_font-weight-line-height---font-weights--regular);
+  font-style: italic;
+  letter-spacing: -.015em;
+  margin: 1.25rem 0 0;
+  width: 100%;
+  max-width: none;
+  transition: color 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 .whos-behind-spotlight-linkedin {
   display: inline-flex;
   flex: none;
   align-items: center;
   justify-content: flex-start;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   text-decoration: none;
   line-height: 0;
   transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
@@ -9738,6 +9967,16 @@ html.whos-behind-motion-ready .whos-behind-section.whos-behind-visible .whos-beh
   .whos-behind-spotlight-card:hover .whos-behind-spotlight-desc,
   .whos-behind-spotlight-card:focus-within .whos-behind-spotlight-desc {
     color: rgba(255, 255, 255, 0.76);
+  }
+
+  .whos-behind-spotlight-card:hover .whos-behind-spotlight-eyebrow,
+  .whos-behind-spotlight-card:focus-within .whos-behind-spotlight-eyebrow {
+    color: rgba(211, 202, 245, 0.92);
+  }
+
+  .whos-behind-spotlight-card:hover .whos-behind-spotlight-personal,
+  .whos-behind-spotlight-card:focus-within .whos-behind-spotlight-personal {
+    color: rgba(119, 240, 230, 0.82);
   }
 
   .whos-behind-spotlight-card:hover .whos-behind-spotlight-linkedin-icon,
@@ -9778,6 +10017,14 @@ html.whos-behind-motion-ready .whos-behind-section.whos-behind-visible .whos-beh
     color: rgba(255, 255, 255, 0.76);
   }
 
+  .whos-behind-spotlight-eyebrow {
+    color: rgba(211, 202, 245, 0.92);
+  }
+
+  .whos-behind-spotlight-personal {
+    color: rgba(119, 240, 230, 0.82);
+  }
+
   .whos-behind-spotlight-linkedin-icon {
     filter: brightness(0) invert(1);
   }
@@ -9791,7 +10038,9 @@ html.whos-behind-motion-ready .whos-behind-section.whos-behind-visible .whos-beh
 
   .whos-behind-spotlight-name,
   .whos-behind-spotlight-role,
-  .whos-behind-spotlight-desc {
+  .whos-behind-spotlight-desc,
+  .whos-behind-spotlight-eyebrow,
+  .whos-behind-spotlight-personal {
     transition: none;
   }
 
@@ -9805,6 +10054,14 @@ html.whos-behind-motion-ready .whos-behind-section.whos-behind-visible .whos-beh
 
   .whos-behind-spotlight-desc {
     color: rgba(255, 255, 255, 0.76);
+  }
+
+  .whos-behind-spotlight-eyebrow {
+    color: rgba(211, 202, 245, 0.92);
+  }
+
+  .whos-behind-spotlight-personal {
+    color: rgba(119, 240, 230, 0.82);
   }
 
   .whos-behind-spotlight-linkedin-icon {
@@ -9826,8 +10083,8 @@ html.whos-behind-motion-ready .whos-behind-section.whos-behind-visible .whos-beh
 @media screen and (max-width: 991px) {
   .whos-behind-section {
     scroll-margin-top: 6.5rem;
-    padding-top: 3.25rem;
-    padding-bottom: 4rem;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .whos-behind-headline-layer {
@@ -9869,6 +10126,11 @@ html.whos-behind-motion-ready .whos-behind-section.whos-behind-visible .whos-beh
   .whos-behind-spotlight-name {
     font-size: clamp(1.35rem, 5.2vw, 1.85rem);
     line-height: 1.05;
+    margin-bottom: 0.35rem;
+  }
+
+  .whos-behind-spotlight-eyebrow {
+    font-size: 0.6875rem;
     margin-bottom: 0.4rem;
   }
 
@@ -9887,8 +10149,14 @@ html.whos-behind-motion-ready .whos-behind-section.whos-behind-visible .whos-beh
     margin-bottom: 0.6rem;
   }
 
-  .whos-behind-spotlight-linkedin {
+  .whos-behind-spotlight-personal {
+    font-size: 0.75rem;
+    line-height: 1.5;
     margin-top: 0.75rem;
+  }
+
+  .whos-behind-spotlight-linkedin {
+    margin-top: 0.85rem;
   }
 
   .whos-behind-spotlight-linkedin-icon {
@@ -9906,8 +10174,8 @@ html.whos-behind-motion-ready .whos-behind-section.whos-behind-visible .whos-beh
 
 @media screen and (max-width: 478px) {
   .whos-behind-section {
-    padding-top: 2.75rem;
-    padding-bottom: 3.25rem;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .whos-behind-headline-layer {

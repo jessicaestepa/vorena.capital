@@ -7,6 +7,7 @@
       'nav.companies': 'Companies',
       'nav.whosBehind': "Who's behind",
       'nav.getInTouch': 'Get in touch',
+      'nav.openRoles': 'Open roles',
       'nav.contact': 'Contact',
       'hero.title': 'We acquire overlooked companies <span class="after-banner-title-mark">and make them unstoppable</span> with AI agents and LATAM talent.',
       'hero.titleDesktop': 'We acquire overlooked companies <span class="after-banner-title-line">\u00a0</span><span class="after-banner-title-mark">and make them unstoppable</span> with AI agents and LATAM talent.',
@@ -48,11 +49,13 @@
       'whosBehind.headingAfter': "'s",
       'whosBehind.headingMark': 'behind',
       'whosBehind.profileName': 'Jessica Maldonado',
+      'whosBehind.card.eyebrow': 'FOUNDER',
       'whosBehind.subtitle': 'Founder & CEO',
-      'whosBehind.card.desc': '<p>Jessica is a finance professional with 5+ years in investments and operations at high-growth companies. She started in finance, then moved into operations at Rappi, Colombia\'s first unicorn, before becoming the first employee at Latin Leap, a LATAM venture capital fund.</p><p>As Founder & CEO of vorena capital, she acquires traditional businesses and scales them with technology. She\'s also an angel investor. Colombian operator based in Mexico City.</p>',
+      'whosBehind.card.desc': '<p>I learned how companies actually work operating at Rappi, then built a fund from scratch as the first hire at Latin Leap. Then I stopped advising and started buying, acquiring and transforming two companies with my own capital, and building the AI tools myself.</p>',
+      'whosBehind.card.personal': 'Marathoner and triathlete. Serial matcha taster. A believer that the best operators come from LATAM.',
       'whosBehind.linkedinAria': 'View Jessica Maldonado on LinkedIn',
       'whosBehind.githubAria': 'View Jessica Estepa on GitHub',
-      'footer.tagline': 'vorena builds and operates AI-native companies.',
+      'footer.tagline': 'vorena acquires, operates, and grows overlooked companies.',
       'footer.pagesTitle': 'Pages',
       'footer.locationTitle': 'Location',
       'footer.contactTitle': 'Contact',
@@ -65,6 +68,28 @@
       'getInTouch.business.desc': "You're a founder or owner curious what vorena could do with your company.",
       'getInTouch.connect.title': 'I want to know more about vorena',
       'getInTouch.connect.desc': "You're curious how we acquire, operate, and grow.",
+      'getInTouch.workWithUs.barLabel': 'Want to w<span class="work-bar-vorena-o" aria-hidden="true"><span class="work-bar-vorena-o-ring"><span class="work-bar-vorena-o-fill"></span></span></span>rk with us?',
+      'getInTouch.workWithUs.barLabelAria': 'Want to work with us?',
+      'getInTouch.workWithUs.panelTitle': 'Work with us',
+      'getInTouch.workWithUs.body.p1': 'We\'re looking for <span class="work-with-us-body-accent">operators</span>. People who\'d rather learn by doing than just analyze.',
+      'getInTouch.workWithUs.body.p2': 'Overachievers who are genuinely driven and already know a thing or two about business, finance, and tech. We love people who are intellectually pliable and weirdly self-motivated.',
+      'getInTouch.workWithUs.body.p3': "We have a soft spot for those with a high tolerance for discomfort (athletes, or anyone who's played sports seriously), who've written interesting opinions about things, who are honest, funny, confident but humble. People who believe in the talent and potential of LATAM, and who tinker with AI almost daily (share your GitHub ;)).",
+      'getInTouch.workWithUs.body.p4': 'And above all, people who <span class="work-with-us-body-accent">believe what we believe</span>: that <span class="work-with-us-body-accent">technology is the great enabler of global growth</span>, and that bringing it into overlooked businesses is <span class="work-with-us-body-accent">where the next explosion of value is hiding</span>.',
+      'getInTouch.workWithUs.body.p5': "You don't need all of this. But if you've got some of it, let's talk.",
+      'getInTouch.workWithUs.openRoles': 'Open roles',
+      'getInTouch.workWithUs.roleSerial1': 'Role 01',
+      'getInTouch.workWithUs.roleSerial2': 'Role 02',
+      'getInTouch.workWithUs.roleSerial3': 'Role 03',
+      'getInTouch.workWithUs.roleApplyTitle': 'Apply for this role',
+      'getInTouch.workWithUs.roleApplyLead': 'Tell us about yourself and why you\'d be a fit.',
+      'getInTouch.workWithUs.panelCta': 'Get in touch',
+      'getInTouch.workWithUs.formName': 'Name',
+      'getInTouch.workWithUs.formEmail': 'Email',
+      'getInTouch.workWithUs.formMessage': 'A few words',
+      'getInTouch.workWithUs.formMessagePlaceholder': "LinkedIn, GitHub, or why you'd be a fit",
+      'getInTouch.workWithUs.formRoleLabel': 'Applying for {{role}}',
+      'getInTouch.workWithUs.selectRoleError': 'Select a role above to continue.',
+      'getInTouch.workWithUs.closeAria': 'Close panel',
       'contactIntent.back': '← Back to home',
       'contactIntent.formTitle': 'Start the conversation',
       'contactIntent.business.eyebrow': 'Business inquiry',
@@ -97,6 +122,7 @@
       'nav.companies': 'Empresas',
       'nav.whosBehind': 'Equipo',
       'nav.getInTouch': 'Contáctanos',
+      'nav.openRoles': 'Posiciones abiertas',
       'nav.contact': 'Contacto',
       'hero.title': 'Adquirimos empresas pasadas por alto <span class="after-banner-title-mark">y las volvemos imparables</span> con agentes de IA y talento LATAM.',
       'hero.titleDesktop': 'Adquirimos empresas pasadas por alto <span class="after-banner-title-line">\u00a0</span><span class="after-banner-title-mark">y las volvemos imparables</span> con agentes de IA y talento LATAM.',
@@ -138,11 +164,13 @@
       'whosBehind.headingAfter': '',
       'whosBehind.headingMark': '',
       'whosBehind.profileName': 'Jessica Maldonado',
+      'whosBehind.card.eyebrow': 'FUNDADORA',
       'whosBehind.subtitle': 'Fundadora y CEO',
-      'whosBehind.card.desc': '<p>Jessica es una profesional de finanzas con más de 5 años en inversiones y operaciones en empresas de alto crecimiento. Empezó en finanzas, luego pasó a operaciones en Rappi, el primer unicornio de Colombia, antes de ser la primera empleada en Latin Leap, un fondo de venture capital en LATAM.</p><p>Como Fundadora y CEO de vorena capital, adquiere negocios tradicionales y los escala con tecnología. También es inversionista ángel. Operadora colombiana con base en Ciudad de México.</p>',
+      'whosBehind.card.desc': '<p>Aprendí cómo funcionan de verdad las empresas operando en Rappi, y luego construí un fondo desde cero como primera contratación en Latin Leap. Después dejé de asesorar y empecé a comprar: adquirí y transformé dos empresas con mi propio capital, y construí yo misma las herramientas de IA.</p>',
+      'whosBehind.card.personal': 'Maratonista y triatleta. Catadora serial de matcha. Convencida de que los mejores operadores salen de LATAM.',
       'whosBehind.linkedinAria': 'Ver a Jessica Maldonado en LinkedIn',
       'whosBehind.githubAria': 'Ver a Jessica Estepa en GitHub',
-      'footer.tagline': 'vorena construye y opera empresas nativas de IA.',
+      'footer.tagline': 'vorena adquiere, opera y hace crecer compañías overlooked.',
       'footer.pagesTitle': 'Páginas',
       'footer.locationTitle': 'Ubicación',
       'footer.contactTitle': 'Contacto',
@@ -155,6 +183,28 @@
       'getInTouch.business.desc': 'Eres founder o dueño y quieres saber qué podría hacer vorena por tu empresa.',
       'getInTouch.connect.title': 'Quiero saber más sobre vorena',
       'getInTouch.connect.desc': 'Quieres saber más sobre cómo adquirimos, operamos y hacemos crecer compañías.',
+      'getInTouch.workWithUs.barLabel': '¿Quieres trabajar con n<span class="work-bar-vorena-o" aria-hidden="true"><span class="work-bar-vorena-o-ring"><span class="work-bar-vorena-o-fill"></span></span></span>sotros?',
+      'getInTouch.workWithUs.barLabelAria': '¿Quieres trabajar con nosotros?',
+      'getInTouch.workWithUs.panelTitle': 'Trabaja con nosotros',
+      'getInTouch.workWithUs.body.p1': 'Buscamos <span class="work-with-us-body-accent">operadores</span>. Gente que prefiere probar haciendo y no solo analizar.',
+      'getInTouch.workWithUs.body.p2': 'Overachievers de verdad motivados, que ya saben una que otra cosa sobre negocios, finanzas y tech. Nos encanta la gente intelectualmente flexible y raramente automotivada.',
+      'getInTouch.workWithUs.body.p3': 'Tenemos preferencia por quienes tienen alta tolerancia a la incomodidad (atletas, o que han practicado deportes en serio), que han escrito opiniones interesantes sobre las cosas, que son honestos, divertidos, seguros pero humildes. Gente que cree en el talento y el potencial de LATAM, y que juega con IA casi a diario (comparte tu GitHub ;)).',
+      'getInTouch.workWithUs.body.p4': 'Y sobre todo, gente que <span class="work-with-us-body-accent">cree lo que nosotros creemos</span>: que <span class="work-with-us-body-accent">la tecnología es el gran habilitador del crecimiento global</span>, y que usarla en los negocios que han sido pasados por alto es <span class="work-with-us-body-accent">donde está la próxima explosión de valor</span>.',
+      'getInTouch.workWithUs.body.p5': 'No necesitas tener todo esto. Pero si tienes algo, hablemos.',
+      'getInTouch.workWithUs.openRoles': 'Posiciones abiertas',
+      'getInTouch.workWithUs.roleSerial1': 'Rol 01',
+      'getInTouch.workWithUs.roleSerial2': 'Rol 02',
+      'getInTouch.workWithUs.roleSerial3': 'Rol 03',
+      'getInTouch.workWithUs.roleApplyTitle': 'Postular a este rol',
+      'getInTouch.workWithUs.roleApplyLead': 'Cuéntanos sobre ti y por qué encajarías.',
+      'getInTouch.workWithUs.panelCta': 'Escríbenos',
+      'getInTouch.workWithUs.formName': 'Nombre',
+      'getInTouch.workWithUs.formEmail': 'Correo',
+      'getInTouch.workWithUs.formMessage': 'Unas palabras',
+      'getInTouch.workWithUs.formMessagePlaceholder': 'LinkedIn, GitHub o por qué encajarías',
+      'getInTouch.workWithUs.formRoleLabel': 'Postulando a {{role}}',
+      'getInTouch.workWithUs.selectRoleError': 'Elige una posición arriba para continuar.',
+      'getInTouch.workWithUs.closeAria': 'Cerrar panel',
       'contactIntent.back': '← Volver al inicio',
       'contactIntent.formTitle': 'Inicia la conversación',
       'contactIntent.business.eyebrow': 'Consulta de negocio',
@@ -190,6 +240,9 @@
       var lang = getLang();
       var strings = translations[lang] || translations.en;
       return strings[key] || translations.en[key] || '';
+    },
+    refresh: function () {
+      applyLang(getLang());
     }
   };
 
@@ -218,6 +271,12 @@
       var key = el.getAttribute('data-i18n-aria');
       var value = strings[key];
       if (value) el.setAttribute('aria-label', value);
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-placeholder');
+      if (!Object.prototype.hasOwnProperty.call(strings, key)) return;
+      el.setAttribute('placeholder', strings[key]);
     });
 
     document.dispatchEvent(

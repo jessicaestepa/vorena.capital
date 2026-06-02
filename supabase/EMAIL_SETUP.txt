@@ -33,6 +33,15 @@ SECURITY
    https://vebkqcijfauvmtrblbeq.supabase.co/functions/v1/notify-contact-submission
    Header: Authorization: Bearer <WEBHOOK_SECRET>
 
-5) Test
-   - Submit a form on contact/business.html or contact/connect.html
-   - Check Table Editor + inbox at NOTIFY_TO
+5) Work with us (talent) — run supabase/setup_work_with_us.sql once
+   - Adds intent 'talent' + role column (Applied AI Engineer, etc.)
+   - Forms on index.html → Work with us panel already POST to contact_submissions
+
+6) Vercel env (Project → Settings → Environment Variables)
+   - VORENA_SUPABASE_URL=https://vebkqcijfauvmtrblbeq.supabase.co
+   - VORENA_SUPABASE_ANON_KEY=sb_publishable_...
+
+7) Test
+   - contact/business.html, contact/connect.html, index → Work with us role form
+   - Table Editor: filter intent = talent; check role column
+   - Inbox at NOTIFY_TO (if webhook deployed)

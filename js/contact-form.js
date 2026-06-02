@@ -1,5 +1,6 @@
 (function () {
   var HONEYPOT_NAME = '_gotcha';
+  var FORM_SELECTOR = '.contact-intent-form[data-intent], .work-with-us-form[data-intent]';
 
   function getConfig() {
     var cfg = window.VORENA_SUPABASE;
@@ -21,8 +22,39 @@
     return key;
   }
 
+  function isWorkWithUsForm(form) {
+    return form.classList.contains('work-with-us-form');
+  }
+
+  function statusEl(form) {
+    return (
+      form.querySelector('.work-with-us-form-status') ||
+      form.querySelector('.contact-intent-form-status')
+    );
+  }
+
+  function submitBtn(form) {
+    return (
+      form.querySelector('.work-with-us-form-submit') ||
+      form.querySelector('.contact-intent-submit')
+    );
+  }
+
+  function submitTextEl(form) {
+    return (
+      form.querySelector('.work-with-us-form-submit-text') ||
+      form.querySelector('.contact-intent-submit-text')
+    );
+  }
+
+  function submitLabel(form, isSubmitting) {
+    if (isSubmitting) return t('contactIntent.sending');
+    if (isWorkWithUsForm(form)) return t('getInTouch.workWithUs.panelCta');
+    return t('contactIntent.submit');
+  }
+
   function setStatus(form, type, message) {
-    var status = form.querySelector('.contact-intent-form-status');
+    var status = statusEl(form);
     if (!status) return;
     status.hidden = !message;
     status.textContent = message || '';
@@ -31,16 +63,12 @@
   }
 
   function setSubmitting(form, isSubmitting) {
-    var btn = form.querySelector('.contact-intent-submit');
+    var btn = submitBtn(form);
     form.classList.toggle('is-submitting', isSubmitting);
     if (btn) {
       btn.disabled = isSubmitting;
-      var text = btn.querySelector('.contact-intent-submit-text');
-      if (text) {
-        text.textContent = isSubmitting
-          ? t('contactIntent.sending')
-          : t('contactIntent.submit');
-      }
+      var text = submitTextEl(form);
+      if (text) text.textContent = submitLabel(form, isSubmitting);
     }
   }
 
@@ -52,7 +80,7 @@
 
   function buildPayload(form) {
     var intent = form.getAttribute('data-intent') || 'connect';
-    return {
+    var payload = {
       intent: intent,
       name: fieldValue(form, 'name'),
       email: fieldValue(form, 'email'),
@@ -63,6 +91,12 @@
       referrer: document.referrer || null,
       user_agent: navigator.userAgent || null
     };
+
+    if (intent === 'talent') {
+      payload.role = fieldValue(form, 'role') || null;
+    }
+
+    return payload;
   }
 
   function submitToSupabase(cfg, payload) {
@@ -91,6 +125,11 @@
       return;
     }
 
+    if (isWorkWithUsForm(form) && !fieldValue(form, 'role')) {
+      setStatus(form, 'is-error', t('getInTouch.workWithUs.selectRoleError'));
+      return;
+    }
+
     if (!cfg) {
       setStatus(form, 'is-error', t('contactIntent.errorConfig'));
       return;
@@ -109,10 +148,18 @@
           });
         }
         setStatus(form, 'is-success', t('contactIntent.success'));
+        var selectedRole = isWorkWithUsForm(form) ? fieldValue(form, 'role') : '';
         form.reset();
+        if (selectedRole) {
+          var roleField = form.elements.namedItem('role');
+          if (roleField) roleField.value = selectedRole;
+        }
         form.classList.add('is-sent');
       })
-      .catch(function () {
+      .catch(function (err) {
+        if (typeof console !== 'undefined' && console.error) {
+          console.error('Contact form submit failed:', err && err.detail ? err.detail : err);
+        }
         setStatus(form, 'is-error', t('contactIntent.error'));
       })
       .finally(function () {
@@ -121,7 +168,7 @@
   }
 
   function init() {
-    document.querySelectorAll('.contact-intent-form[data-intent]').forEach(function (form) {
+    document.querySelectorAll(FORM_SELECTOR).forEach(function (form) {
       form.setAttribute('action', '');
       form.setAttribute('method', 'post');
       form.removeAttribute('enctype');

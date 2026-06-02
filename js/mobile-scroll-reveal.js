@@ -41,7 +41,7 @@
       section: '#get-in-touch',
       visibleClass: 'get-in-touch-visible',
       mode: 'item',
-      items: ['.get-in-touch-headline', '.get-in-touch-option']
+      items: ['.get-in-touch-headline', '.get-in-touch-option', '.get-in-touch-work-bar']
     }
   ];
 
@@ -65,11 +65,21 @@
         window.vorenaGetInTouchHeadline.play();
       }
     }
+
+    if (el.classList.contains('get-in-touch-work-bar')) {
+      var workSection = el.closest('.get-in-touch-section');
+      if (workSection && !workSection.classList.contains('get-in-touch-work-bar-visible')) {
+        workSection.classList.add('get-in-touch-work-bar-visible');
+      }
+    }
   }
 
   function markSectionVisible(sectionEl, visibleClass) {
     if (sectionEl && visibleClass) {
       sectionEl.classList.add(visibleClass);
+      if (sectionEl.id === 'get-in-touch') {
+        sectionEl.classList.add('get-in-touch-work-bar-visible');
+      }
     }
   }
 

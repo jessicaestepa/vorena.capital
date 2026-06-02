@@ -44,20 +44,26 @@
   }
 
   /* Get in touch: options follow mobile reveal, not batch options-visible */
-  html.mobile-scroll-reveal-ready .get-in-touch-section .get-in-touch-option.mobile-reveal:not(.mobile-revealed) {
+  html.mobile-scroll-reveal-ready .get-in-touch-section .get-in-touch-option.mobile-reveal:not(.mobile-revealed),
+  html.mobile-scroll-reveal-ready .get-in-touch-section .get-in-touch-work-bar.mobile-reveal:not(.mobile-revealed) {
     opacity: 0;
     transform: translate3d(0, 0.85rem, 0);
   }
 
-  html.mobile-scroll-reveal-ready .get-in-touch-section .get-in-touch-option.mobile-revealed {
+  html.mobile-scroll-reveal-ready .get-in-touch-section .get-in-touch-option.mobile-revealed,
+  html.mobile-scroll-reveal-ready .get-in-touch-section .get-in-touch-work-bar.mobile-revealed {
     opacity: 1 !important;
     transform: translate3d(0, 0, 0) !important;
     transition:
       opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
       transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-      background-color 0.22s cubic-bezier(0.22, 1, 0.36, 1),
-      border-color 0.22s cubic-bezier(0.22, 1, 0.36, 1),
-      box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+      box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  html.mobile-scroll-reveal-ready .get-in-touch-section.get-in-touch-visible .get-in-touch-work-bar {
+    opacity: 1 !important;
+    transform: translate3d(0, 0, 0) !important;
   }
 }
 
