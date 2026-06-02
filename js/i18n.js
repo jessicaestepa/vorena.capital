@@ -248,9 +248,27 @@
     }
   };
 
+  function getBrowserLang() {
+    var langs =
+      navigator.languages && navigator.languages.length
+        ? navigator.languages
+        : [navigator.language || 'en'];
+
+    for (var i = 0; i < langs.length; i++) {
+      var code = String(langs[i] || '')
+        .toLowerCase()
+        .split('-')[0];
+      if (code === 'es') return 'es';
+      if (code === 'en') return 'en';
+    }
+
+    return 'en';
+  }
+
   function getLang() {
     var stored = localStorage.getItem(STORAGE_KEY);
-    return stored === 'es' ? 'es' : 'en';
+    if (stored === 'es' || stored === 'en') return stored;
+    return getBrowserLang();
   }
 
   function applyLang(lang) {
