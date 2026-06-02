@@ -62,6 +62,54 @@
     if (type) status.classList.add(type);
   }
 
+  var toastTimer = null;
+  var toastEl = null;
+
+  function ensureToast() {
+    if (toastEl) return toastEl;
+    var host = document.createElement('div');
+    host.className = 'vorena-form-toast-host';
+    host.setAttribute('aria-live', 'polite');
+    host.setAttribute('aria-atomic', 'true');
+    document.body.appendChild(host);
+    toastEl = document.createElement('div');
+    toastEl.className = 'vorena-form-toast';
+    toastEl.setAttribute('role', 'status');
+    toastEl.hidden = true;
+    toastEl.innerHTML =
+      '<span class="vorena-form-toast-icon" aria-hidden="true">' +
+      '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+      '<path d="M3.5 8.25L6.5 11.25L12.5 4.75" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>' +
+      '</svg></span>' +
+      '<span class="vorena-form-toast-text"></span>';
+    host.appendChild(toastEl);
+    return toastEl;
+  }
+
+  function hideSuccessToast() {
+    if (!toastEl) return;
+    toastEl.classList.remove('is-visible');
+    toastEl.classList.add('is-hiding');
+    window.setTimeout(function () {
+      if (!toastEl) return;
+      toastEl.hidden = true;
+      toastEl.classList.remove('is-hiding');
+    }, 280);
+  }
+
+  function showSuccessToast(message) {
+    var el = ensureToast();
+    var text = el.querySelector('.vorena-form-toast-text');
+    if (text) text.textContent = message;
+    el.hidden = false;
+    el.classList.remove('is-hiding');
+    window.requestAnimationFrame(function () {
+      el.classList.add('is-visible');
+    });
+    if (toastTimer) window.clearTimeout(toastTimer);
+    toastTimer = window.setTimeout(hideSuccessToast, 3200);
+  }
+
   function setSubmitting(form, isSubmitting) {
     var btn = submitBtn(form);
     form.classList.toggle('is-submitting', isSubmitting);
@@ -147,7 +195,8 @@
             throw err;
           });
         }
-        setStatus(form, 'is-success', t('contactIntent.success'));
+        setStatus(form, null, '');
+        showSuccessToast(t('contactIntent.successToast'));
         var selectedRole = isWorkWithUsForm(form) ? fieldValue(form, 'role') : '';
         form.reset();
         if (selectedRole) {

@@ -1877,3 +1877,82 @@ html.editorial-slideout-open {
     align-self: flex-end;
   }
 }
+
+/* ── Form success toast ── */
+.vorena-form-toast-host {
+  position: fixed;
+  inset: auto 0 1.75rem;
+  z-index: 10100;
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+  pointer-events: none;
+}
+
+.vorena-form-toast {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.62rem 1.05rem 0.62rem 0.85rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1a6b4a 0%, #227854 100%);
+  color: #f4fff9;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  box-shadow:
+    0 10px 28px rgba(26, 107, 74, 0.28),
+    0 2px 8px rgba(32, 28, 64, 0.1);
+  opacity: 0;
+  transform: translateY(0.75rem) scale(0.96);
+  transition:
+    opacity 0.32s ease,
+    transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: auto;
+}
+
+.vorena-form-toast.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.vorena-form-toast.is-hiding {
+  opacity: 0;
+  transform: translateY(0.45rem) scale(0.98);
+}
+
+.vorena-form-toast-icon {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.vorena-form-toast-text {
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 767px) {
+  .vorena-form-toast-host {
+    bottom: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vorena-form-toast {
+    transition: opacity 0.15s ease;
+    transform: none;
+  }
+
+  .vorena-form-toast.is-visible,
+  .vorena-form-toast.is-hiding {
+    transform: none;
+  }
+}

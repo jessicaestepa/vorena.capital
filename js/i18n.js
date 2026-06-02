@@ -71,7 +71,7 @@
       'getInTouch.workWithUs.barLabel': 'Want to w<span class="work-bar-vorena-o" aria-hidden="true"><span class="work-bar-vorena-o-ring"><span class="work-bar-vorena-o-fill"></span></span></span>rk with us?',
       'getInTouch.workWithUs.barLabelAria': 'Want to work with us?',
       'getInTouch.workWithUs.panelTitle': 'Work with us',
-      'getInTouch.workWithUs.body.p1': 'We\'re looking for <span class="work-with-us-body-accent">operators</span>. People who\'d rather learn by doing than just analyze.',
+      'getInTouch.workWithUs.body.p1': 'We\'re looking for <span class="work-with-us-body-accent">operators</span>. People who\'d rather learn by doing than just analyzing.',
       'getInTouch.workWithUs.body.p2': 'Overachievers who are genuinely driven and already know a thing or two about business, finance, and tech. We love people who are intellectually pliable and weirdly self-motivated.',
       'getInTouch.workWithUs.body.p3': "We have a soft spot for those with a high tolerance for discomfort (athletes, or anyone who's played sports seriously), who've written interesting opinions about things, who are honest, funny, confident but humble. People who believe in the talent and potential of LATAM, and who tinker with AI almost daily (share your GitHub ;)).",
       'getInTouch.workWithUs.body.p4': 'And above all, people who <span class="work-with-us-body-accent">believe what we believe</span>: that <span class="work-with-us-body-accent">technology is the great enabler of global growth</span>, and that bringing it into overlooked businesses is <span class="work-with-us-body-accent">where the next explosion of value is hiding</span>.',
@@ -114,6 +114,7 @@
       'contactIntent.submit': 'Send message',
       'contactIntent.sending': 'Sending…',
       'contactIntent.success': "Thanks — we received your message and will reply soon.",
+      'contactIntent.successToast': 'Sent!',
       'contactIntent.error': 'Something went wrong. Please try again or email jessica@vorena.capital.',
       'contactIntent.errorConfig': 'Form is not connected yet. Please email jessica@vorena.capital.'
     },
@@ -229,6 +230,7 @@
       'contactIntent.submit': 'Enviar mensaje',
       'contactIntent.sending': 'Enviando…',
       'contactIntent.success': 'Gracias — recibimos tu mensaje y te responderemos pronto.',
+      'contactIntent.successToast': '¡Enviado!',
       'contactIntent.error': 'Algo salió mal. Intenta de nuevo o escribe a jessica@vorena.capital.',
       'contactIntent.errorConfig': 'El formulario aún no está conectado. Escribe a jessica@vorena.capital.'
     }

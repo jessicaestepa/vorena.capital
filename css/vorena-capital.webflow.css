@@ -1003,11 +1003,13 @@ html.nav-scroll-lock .navbar {
 }
 
 .footer-get-in-touch .footer-links-flex {
-  gap: 0.5rem;
+  flex-flow: column;
+  align-items: flex-start;
+  gap: 0.625rem;
 }
 
 .footer-get-in-touch .footer-link-divider {
-  display: block;
+  display: none;
 }
 
 .footer-get-in-touch .copyright-text {
@@ -1026,11 +1028,10 @@ html.nav-scroll-lock .navbar {
   }
 
   .footer-get-in-touch .footer-links-flex {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    grid-column-gap: clamp(1.25rem, 6vw, 2rem);
-    grid-row-gap: 0.75rem;
-    align-items: start;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    gap: 0.625rem;
     width: 100%;
   }
 
@@ -7732,15 +7733,15 @@ html.capital-scroll .banner-capital-mark {
     display: none;
   }
 
-  .footer-get-in-touch .footer-link-divider {
-    display: none;
+  .footer-get-in-touch .footer-links-flex {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    gap: 0.625rem;
   }
 
-  .footer-get-in-touch .footer-links-flex {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    grid-column-gap: 1.25rem;
-    grid-row-gap: 0.65rem;
+  .footer-get-in-touch .footer-link-divider {
+    display: none;
   }
 
   .quick-links-row {
