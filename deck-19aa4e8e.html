@@ -854,6 +854,7 @@
   var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZlYmtxY2lqZmF1dm10cmJsYmVxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA0MDk2MDAsImV4cCI6MjA5NTk4NTYwMH0.XQM7iy3NIMN9TuA7ErtW-R9iTh0LcyBgDVYWrRp-YlY';
   var TABLE             = 'deck_leads';
   var STORAGE_KEY       = 'vorena_deck_lead';
+  var EVENTS_TABLE      = 'deck_events';
   /* ============================================================== */
 
   var gate  = document.getElementById('gate');
@@ -908,12 +909,61 @@
     });
   }
 
+  // ---- engagement tracking: furthest slide + time on deck ----
+  var viewerEmail = null, engOn = false, sessionId, startTs, maxSlide = 1, allSlides, lastSent = 0;
+  function slideIndex(){
+    var a = document.querySelector('.slide.active');
+    if(!a || !allSlides) return maxSlide;
+    var i = Array.prototype.indexOf.call(allSlides, a) + 1;
+    return i > 0 ? i : maxSlide;
+  }
+  function postEvent(reason){
+    if(!SUPABASE_URL || !SUPABASE_ANON_KEY || !viewerEmail) return;
+    var now = Date.now();
+    if(now - lastSent < 1200) return;  // debounce
+    lastSent = now;
+    maxSlide = Math.max(maxSlide, slideIndex());
+    try{
+      fetch(SUPABASE_URL.replace(/\/$/,'') + '/rest/v1/' + EVENTS_TABLE, {
+        method:'POST', keepalive:true,
+        headers:{
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({
+          session_id: sessionId,
+          email: viewerEmail,
+          max_slide: maxSlide,
+          seconds: Math.round((now - startTs)/1000),
+          reason: reason
+        })
+      }).catch(function(){});
+    }catch(_){}
+  }
+  function startEngagement(mail){
+    if(engOn) return; engOn = true;
+    viewerEmail = mail;
+    allSlides = document.querySelectorAll('.slide');
+    sessionId = (window.crypto && crypto.randomUUID) ? crypto.randomUUID()
+              : (Date.now() + '-' + Math.random().toString(16).slice(2));
+    startTs = Date.now();
+    setInterval(function(){ maxSlide = Math.max(maxSlide, slideIndex()); }, 1500);
+    setInterval(function(){ postEvent('heartbeat'); }, 60000);          // safety net
+    document.addEventListener('visibilitychange', function(){
+      if(document.visibilityState === 'hidden') postEvent('hidden');
+    });
+    window.addEventListener('pagehide', function(){ postEvent('exit'); });
+  }
+
   var prior = stored();
   if(prior){
     // returning visitor — skip the gate entirely
     gate.classList.add('hide');
     if(gate.parentNode) gate.remove();
     applyWatermark(prior);
+    startEngagement(prior);
   } else {
     deck.style.overflow = 'hidden';
     setTimeout(function(){ email.focus(); }, 450);
@@ -933,6 +983,7 @@
     btn.disabled = true; btn.textContent = 'Opening\u2026';
     try{ localStorage.setItem(STORAGE_KEY, e); }catch(_){}
     applyWatermark(e);
+    startEngagement(e);
     track(e).catch(function(x){ console.warn('[deck] tracking failed', x); });  // fire-and-forget
     setTimeout(function(){ reveal(true); }, 380);
   });
