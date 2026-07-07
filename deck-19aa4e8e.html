@@ -359,8 +359,18 @@
 
   /* ---------- Responsive ---------- */
   @media (max-width:900px){
-    .slide{padding:7vh 6vw 12vh;height:auto;min-height:100vh;min-height:100dvh}
+    .slide{padding:8.5vh 6vw 12vh;height:auto;min-height:100vh;min-height:100dvh}
     #deck{scroll-snap-type:y proximity}
+    /* clear section break at the top of every slide (after the cover) */
+    .slide + .slide::before{
+      content:"";position:absolute;top:0;left:0;right:0;
+      border-top:1px solid rgba(30,26,58,.10);
+    }
+    .slide + .slide::after{
+      content:"";position:absolute;top:2.4vh;left:50%;transform:translateX(-50%);
+      width:46px;height:4px;border-radius:999px;
+      background:rgba(30,26,58,.16);z-index:2;
+    }
     #dots,#hint{display:none}
     #counter{left:1.2rem;bottom:1.2rem}
     #navbtns{right:1rem;bottom:.9rem}
