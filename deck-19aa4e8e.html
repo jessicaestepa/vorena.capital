@@ -28,7 +28,7 @@
     --ease:cubic-bezier(.22,1,.36,1);
   }
   *{margin:0;padding:0;box-sizing:border-box}
-  html{font-size:120%}          /* global scale — everything ~20% larger */
+  html{font-size:120%;background:var(--bg)}   /* global scale + no white canvas behind slides */
   html,body{height:100%}
   body{
     font-family:'Instrument Sans',system-ui,sans-serif;
@@ -41,7 +41,10 @@
   /* ---------- Deck scaffolding ---------- */
   #deck{
     height:100vh;
+    height:100dvh;
     overflow-y:auto;
+    overscroll-behavior-y:none;
+    background:var(--bg);
     scroll-snap-type:y mandatory;
     scroll-behavior:smooth;
     scrollbar-width:none;
@@ -356,7 +359,7 @@
 
   /* ---------- Responsive ---------- */
   @media (max-width:900px){
-    .slide{padding:7vh 6vw 12vh;height:auto;min-height:100vh;min-height:100svh}
+    .slide{padding:7vh 6vw 12vh;height:auto;min-height:100vh;min-height:100dvh}
     #deck{scroll-snap-type:y proximity}
     #dots,#hint{display:none}
     #counter{left:1.2rem;bottom:1.2rem}
