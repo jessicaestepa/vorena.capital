@@ -359,20 +359,32 @@
 
   /* ---------- Responsive ---------- */
   @media (max-width:900px){
-    .slide{padding:8.5vh 6vw 12vh;height:auto;min-height:100vh;min-height:100dvh}
-    #deck{scroll-snap-type:y proximity}
-    /* clear section break at the top of every slide (after the cover) */
-    .slide + .slide::before{
-      content:"";position:absolute;top:0;left:0;right:0;
-      border-top:1px solid rgba(30,26,58,.10);
+    /* --- slides read as distinct cards on a deeper canvas --- */
+    html{background:#e3ddf3}
+    #deck{scroll-snap-type:y proximity;background:#e3ddf3;padding:0 10px}
+    .slide{
+      padding:6.5vh 6vw 10vh;height:auto;
+      min-height:92vh;min-height:calc(100dvh - 20px);
+      margin:0 0 14px;border-radius:22px;
+      box-shadow:0 12px 32px -18px rgba(30,26,58,.28);
+      scroll-margin-top:10px;
     }
-    .slide + .slide::after{
-      content:"";position:absolute;top:2.4vh;left:50%;transform:translateX(-50%);
-      width:46px;height:4px;border-radius:999px;
-      background:rgba(30,26,58,.16);z-index:2;
+    .slide:first-child{margin-top:10px}
+
+    /* --- mobile reveal: each element fades up once as it enters view.
+           No blur, no per-slide re-hiding — scrolling always shows content. --- */
+    [data-a], .slide.active [data-a]{
+      opacity:0;transform:translateY(18px);filter:none;
+      transition:opacity .6s var(--ease),transform .6s var(--ease);
+      transition-delay:calc(min(var(--d,0),3)*80ms);
     }
+    .slide [data-a].in, .slide.active [data-a].in{opacity:1;transform:none;filter:none}
     #dots,#hint{display:none}
-    #counter{left:1.2rem;bottom:1.2rem}
+    #counter{
+      left:1rem;bottom:1.1rem;padding:.35em .8em;border-radius:999px;
+      background:rgba(255,255,255,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+      box-shadow:0 4px 14px -6px rgba(30,26,58,.25);
+    }
     #navbtns{right:1rem;bottom:.9rem}
     #navbtns button{width:38px;height:38px}
 
@@ -846,6 +858,24 @@
   }
   deck.addEventListener('scroll', onScroll, {passive:true});
   window.addEventListener('resize', onScroll);
+
+  // mobile reveal: mark each animated element once it scrolls into view.
+  // Desktop ignores the class (reveals are driven by the active slide there).
+  // Scroll-position based (not IntersectionObserver) so it works everywhere.
+  let pending = Array.prototype.slice.call(document.querySelectorAll('[data-a]'));
+  function checkReveals(){
+    if(!pending.length) return;
+    const limit = deck.clientHeight * 0.94;
+    pending = pending.filter(el=>{
+      const r = el.getBoundingClientRect();
+      if(r.top < limit && r.bottom > 0){ el.classList.add('in'); return false; }
+      return true;
+    });
+  }
+  deck.addEventListener('scroll', checkReveals, {passive:true});
+  window.addEventListener('resize', checkReveals);
+  checkReveals();
+  setTimeout(checkReveals, 400);   // after fonts/layout settle
 
   document.getElementById('prev').addEventListener('click', ()=>go(idx-1));
   document.getElementById('next').addEventListener('click', ()=>go(idx+1));
