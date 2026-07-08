@@ -332,7 +332,7 @@
   .s10 .quote{margin-top:2rem;font-size:.95rem}
 
   /* ============ SLIDE — TEAM & STRUCTURE ============ */
-  .s11t .cols{display:grid;grid-template-columns:1.08fr 1fr;gap:3.2rem;margin-top:2rem;align-items:start}
+  .s11t .cols{display:grid;grid-template-columns:1fr 1.28fr;gap:3.6rem;margin-top:2rem;align-items:center}
   .founder-card{
     background:#fff;border:1px solid var(--rule);border-radius:18px;
     padding:1.6rem 1.8rem;box-shadow:0 14px 40px -18px rgba(30,26,58,.15);
@@ -341,8 +341,8 @@
   .founder-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
   .founder-card .fhead{display:flex;align-items:center;gap:1.25rem;margin-bottom:1.2rem}
   .founder-card .avatar{
-    width:104px;height:104px;border-radius:50%;object-fit:cover;flex:none;
-    border:4px solid #fff;box-shadow:0 0 0 2px var(--purple-soft),0 14px 30px -12px rgba(30,26,58,.4);
+    width:140px;height:140px;border-radius:50%;object-fit:cover;flex:none;
+    border:4px solid #fff;box-shadow:0 0 0 2px var(--purple-soft),0 16px 34px -12px rgba(30,26,58,.4);
     transition:transform .4s var(--ease),box-shadow .4s var(--ease);
   }
   .founder-card:hover .avatar{transform:scale(1.05) rotate(-2deg);box-shadow:0 0 0 3px var(--purple),0 18px 36px -12px rgba(176,94,241,.45)}
@@ -365,7 +365,14 @@
   }
   .term-chip:hover{background:var(--purple-soft);transform:translateY(-2px)}
   /* structure diagram — SWAT layer cuts across all portfolio companies */
-  .org{display:flex;flex-direction:column}
+  .org{display:flex;flex-direction:column;width:100%;max-width:560px;margin:0 auto}
+  .org .board{
+    align-self:center;border:1.5px dashed rgba(30,26,58,.38);border-radius:12px;
+    padding:.6rem 1.7rem;text-align:center;font-weight:600;font-size:.86rem;color:var(--navy);
+    background:rgba(255,255,255,.55);
+  }
+  .org .board small{display:block;font-weight:400;font-size:.68rem;color:var(--gray);margin-top:.18rem}
+  .org .vline.dashed{background:none;width:0;border-left:2px dashed rgba(30,26,58,.32);height:20px}
   .org .hold{
     align-self:center;background:var(--navy);color:#fff;border-radius:14px;
     padding:.85rem 2.2rem;text-align:center;font-weight:700;letter-spacing:-.01em;
@@ -381,7 +388,8 @@
     box-shadow:0 14px 34px -14px rgba(176,94,241,.6);
   }
   @keyframes swatflow{from{background-position:0% 50%}to{background-position:100% 50%}}
-  .org .swat small{display:block;font-weight:500;font-size:.74rem;opacity:.92;margin-top:.2rem;letter-spacing:0}
+  .org .swat small{display:block;font-weight:500;font-size:.76rem;opacity:.95;margin-top:.25rem;letter-spacing:0}
+  .org .swat .fn{display:block;font-weight:500;font-size:.66rem;opacity:.78;margin-top:.2rem;letter-spacing:.04em;text-transform:uppercase}
   .org .drops{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
   .org .drops i{display:block;width:2px;height:22px;background:rgba(30,26,58,.25);margin:0 auto}
   .org .pc{
@@ -472,7 +480,7 @@
     #navbtns button{width:38px;height:38px}
 
     .s3 .cols,.s5 .grid,.s8 .cols,.s9 .grid,.s10 .cols,.s11 .cols,.s11t .cols{grid-template-columns:1fr;gap:2rem}
-    .founder-card .avatar{width:86px;height:86px}
+    .founder-card .avatar{width:104px;height:104px}
     .s2 .stats{grid-template-columns:1fr;gap:1.5rem;padding:1.6rem 0 1.8rem;margin-top:2rem}
     .s2 .stats>div+div{border-left:none;padding-left:0;border-top:1px solid var(--rule);padding-top:1.5rem}
     .s8 .cols{gap:3rem}
@@ -874,15 +882,17 @@
         </div>
       </div>
       <div class="org">
-        <div class="hold" data-a style="--d:3">vorena capital<small>holding</small></div>
-        <div class="vline" data-a style="--d:4"></div>
-        <div class="swat" data-a style="--d:5">SWAT team<small>sourcing &middot; AI engineering &middot; integration</small></div>
+        <div class="board" data-a style="--d:3">Board of major investors<small>close to holding strategy &amp; key decisions</small></div>
+        <div class="vline dashed" data-a style="--d:4"></div>
+        <div class="hold" data-a style="--d:5">vorena capital<small>holding</small></div>
+        <div class="vline" data-a style="--d:6"></div>
+        <div class="swat" data-a style="--d:7">SWAT team<small>top operators &middot; AI-native &middot; jump into each company as needed</small><span class="fn">sourcing &middot; AI engineering &middot; integration</span></div>
         <div class="drops">
-          <div data-a style="--d:6"><i></i><a class="pc" href="https://www.papercheck.com/" target="_blank" rel="noopener">PaperCheck<small>runs independently</small></a></div>
-          <div data-a style="--d:7"><i></i><a class="pc" href="https://www.aitextspeak.com/" target="_blank" rel="noopener">AI TextSpeak<small>runs independently</small></a></div>
-          <div data-a style="--d:8"><i></i><div class="pc">+ future<small>acquisitions</small></div></div>
+          <div data-a style="--d:8"><i></i><a class="pc" href="https://www.papercheck.com/" target="_blank" rel="noopener">PaperCheck<small>runs independently</small></a></div>
+          <div data-a style="--d:9"><i></i><a class="pc" href="https://www.aitextspeak.com/" target="_blank" rel="noopener">AI TextSpeak<small>runs independently</small></a></div>
+          <div data-a style="--d:10"><i></i><div class="pc">+ future<small>acquisitions</small></div></div>
         </div>
-        <div class="cap" data-a style="--d:9">Board oversight from the holding. Day-to-day runs inside each company.</div>
+        <div class="cap" data-a style="--d:11">Board oversight from the holding. Day-to-day runs inside each company.</div>
       </div>
     </div>
   </section>
