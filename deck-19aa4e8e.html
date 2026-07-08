@@ -331,6 +331,49 @@
   .s10 p{font-size:.98rem;line-height:1.5}
   .s10 .quote{margin-top:2rem;font-size:.95rem}
 
+  /* ============ SLIDE — TEAM & STRUCTURE ============ */
+  .s11t .cols{display:grid;grid-template-columns:1.08fr 1fr;gap:3.2rem;margin-top:2rem;align-items:start}
+  .founder-card{
+    background:#fff;border:1px solid var(--rule);border-radius:18px;
+    padding:1.5rem 1.7rem;box-shadow:0 14px 40px -18px rgba(30,26,58,.15);
+  }
+  .founder-card h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em}
+  .founder-card .role{color:var(--purple);font-weight:600;font-size:.85rem;margin:.15rem 0 1rem}
+  .founder-card ul{list-style:none}
+  .founder-card li{font-size:.88rem;line-height:1.5;padding-left:1.1rem;position:relative;margin-bottom:.55rem;color:#37345a}
+  .founder-card li::before{content:'';position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--purple)}
+  .founder-card li b{color:var(--navy)}
+  .vesting{margin-top:1.25rem;border-top:1px solid var(--rule);padding-top:1.05rem}
+  .vesting .kicker{margin-bottom:.7rem}
+  .vest-row{display:flex;gap:1rem;align-items:baseline;margin-bottom:.6rem}
+  .vest-row b{font-size:1.35rem;letter-spacing:-.02em;min-width:3.4rem;font-variant-numeric:tabular-nums}
+  .vest-row span{font-size:.85rem;color:#55516e;line-height:1.5}
+  .terms{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.15rem}
+  .term-chip{background:var(--purple-pale);border-radius:999px;padding:.55em 1.15em;font-size:.8rem;font-weight:600;color:var(--navy)}
+  /* structure diagram — SWAT layer cuts across all portfolio companies */
+  .org{display:flex;flex-direction:column}
+  .org .hold{
+    align-self:center;background:var(--navy);color:#fff;border-radius:14px;
+    padding:.85rem 2.2rem;text-align:center;font-weight:700;letter-spacing:-.01em;
+  }
+  .org .hold small{display:block;font-weight:500;font-size:.66rem;opacity:.7;letter-spacing:.16em;text-transform:uppercase;margin-top:.2rem}
+  .org .vline{width:2px;height:26px;background:rgba(30,26,58,.25);align-self:center}
+  .org .swat{
+    background:linear-gradient(90deg,var(--purple),#8f7ae8 55%,var(--mint-deep));
+    color:#fff;border-radius:12px;padding:.75rem 1.2rem;text-align:center;
+    font-weight:700;font-size:.95rem;letter-spacing:.02em;
+    box-shadow:0 14px 34px -14px rgba(176,94,241,.6);
+  }
+  .org .swat small{display:block;font-weight:500;font-size:.74rem;opacity:.92;margin-top:.2rem;letter-spacing:0}
+  .org .drops{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+  .org .drops i{display:block;width:2px;height:22px;background:rgba(30,26,58,.25);margin:0 auto}
+  .org .pc{
+    background:#fff;border:1px solid var(--rule);border-radius:12px;
+    padding:.85rem .5rem;text-align:center;font-weight:600;font-size:.84rem;
+  }
+  .org .pc small{display:block;font-weight:400;font-size:.62rem;color:var(--gray);margin-top:.25rem}
+  .org .cap{text-align:center;font-size:.78rem;color:var(--gray);margin-top:1.2rem;font-style:italic}
+
   /* ============ SLIDE 11 — PIPELINE ============ */
   .s11 .cols{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1.6rem}
   .dealcard{
@@ -408,7 +451,7 @@
     #navbtns{right:1rem;bottom:.9rem}
     #navbtns button{width:38px;height:38px}
 
-    .s3 .cols,.s5 .grid,.s8 .cols,.s9 .grid,.s10 .cols,.s11 .cols{grid-template-columns:1fr;gap:1.6rem}
+    .s3 .cols,.s5 .grid,.s8 .cols,.s9 .grid,.s10 .cols,.s11 .cols,.s11t .cols{grid-template-columns:1fr;gap:2rem}
     .s2 .stats{grid-template-columns:1fr;gap:1.5rem;padding:1.6rem 0 1.8rem;margin-top:2rem}
     .s2 .stats>div+div{border-left:none;padding-left:0;border-top:1px solid var(--rule);padding-top:1.5rem}
     .s8 .cols{gap:3rem}
@@ -781,7 +824,44 @@
     <div class="quote" data-a style="--d:5">We compound like the best holding companies. <span class="accent">You get liquidity along the way.</span></div>
   </section>
 
-  <!-- 11 · PIPELINE -->
+  <!-- 11 · TEAM & STRUCTURE -->
+  <section class="slide s11t" data-name="Team &amp; Structure">
+    <div><span class="chip" data-a style="--d:0">Team &amp; Structure</span></div>
+    <h1 class="h-lg" data-a style="--d:1">Built by an operator. Run like a system.</h1>
+    <div class="cols">
+      <div class="founder-card" data-a style="--d:2">
+        <h3>Jessica Maldonado</h3>
+        <div class="role">Founder &amp; CEO</div>
+        <ul>
+          <li>Operator at <b>Rappi</b></li>
+          <li>First hire at <b>Latin Leap</b> &mdash; built dealflow, diligence, and LP relations from scratch (~$20M LATAM VC)</li>
+          <li>Acquired and operated <b>PaperCheck</b> and <b>AI TextSpeak</b> &mdash; built the AI tools that transformed both</li>
+        </ul>
+        <div class="vesting">
+          <div class="kicker">Founder equity &mdash; fully aligned</div>
+          <div class="vest-row"><b>15%</b><span>time-based &middot; 48 months</span></div>
+          <div class="vest-row"><b>85%</b><span>performance-based: &#8531; first deal closed &middot; &#8531; at 2x investor MOIC &middot; &#8531; at 4x investor MOIC</span></div>
+        </div>
+        <div class="terms">
+          <span class="term-chip">1.0x liquidation preference</span>
+          <span class="term-chip">5% employee pool reserved</span>
+        </div>
+      </div>
+      <div class="org" data-a style="--d:4">
+        <div class="hold">vorena capital<small>holding</small></div>
+        <div class="vline"></div>
+        <div class="swat">SWAT team<small>sourcing &middot; AI engineering &middot; integration</small></div>
+        <div class="drops">
+          <div><i></i><div class="pc">PaperCheck<small>runs independently</small></div></div>
+          <div><i></i><div class="pc">AI TextSpeak<small>runs independently</small></div></div>
+          <div><i></i><div class="pc">+ future<small>acquisitions</small></div></div>
+        </div>
+        <div class="cap">Board oversight from the holding. Day-to-day runs inside each company.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 · PIPELINE -->
   <section class="slide s11" data-name="Pipeline">
     <div><span class="chip" data-a style="--d:0">Pipeline</span></div>
     <h1 class="h-lg" data-a style="--d:1">Two live deals, both in the thesis.</h1>
