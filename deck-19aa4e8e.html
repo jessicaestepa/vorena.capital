@@ -281,6 +281,56 @@
   }
   .slide.active .venn .mid{opacity:1}
   .venn .mid span{background:var(--mint);padding:.05em .25em;border-radius:.15em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+  /* ---- vorenaOS system map (slide 6) ---- */
+  .s6 .osmark{font-size:clamp(2.6rem,5.2vw,4.2rem);font-weight:700;letter-spacing:-.03em;color:var(--navy);line-height:1;text-align:left}
+  .s6 .osmark span{background:linear-gradient(90deg,var(--lav),var(--purple),var(--teal));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .s6 .ossub{font-size:clamp(1rem,1.7vw,1.35rem);font-weight:600;color:var(--navy);margin-top:.55rem;text-align:left}
+  .s6 .livehdr{display:flex;align-items:center;gap:.5em;font-size:.66rem;font-weight:700;letter-spacing:.16em;color:var(--navy);font-family:'SF Mono',ui-monospace,Menlo,monospace;margin-bottom:.7rem}
+  .s6 .livehdr i{width:.6em;height:.6em;border-radius:50%;background:var(--green);animation:ospulse 2s infinite}
+  .s6 .osmap{position:relative}
+  .osmap .lb,.osmap .lp,.osmap .st,.osmap .ch{font-family:'SF Mono',ui-monospace,Menlo,monospace}
+  .osmap .st{fill:var(--gray);font-weight:600;letter-spacing:.1em}
+  .osmap .ac{font-family:'SF Mono',ui-monospace,Menlo,monospace;fill:#6f6b8d;font-weight:600;letter-spacing:.14em}
+  .osmap #dsRow{cursor:pointer}
+  .osmap .pulse{animation:ospulse 2s infinite}
+  @keyframes ospulse{0%,100%{opacity:1}50%{opacity:.3}}
+  @media (prefers-reduced-motion:no-preference){
+    .osmap .fl{stroke-dasharray:5 5;animation:osflow 1.4s linear infinite}
+    .osmap .lr{animation:osflow 1.8s linear infinite}
+  }
+  @keyframes osflow{to{stroke-dashoffset:-10}}
+  .s6 .sxpop{
+    position:absolute;left:33%;top:6%;width:min(540px,60vw);
+    background:#fff;border:1px solid var(--rule);border-radius:14px;box-shadow:var(--shadow);
+    padding:1.15rem 1.35rem;opacity:0;pointer-events:none;transform:translateY(10px);
+    transition:opacity .4s var(--ease),transform .4s var(--ease);text-align:left;z-index:5;
+  }
+  .s6 .sxpop.open{opacity:1;pointer-events:auto;transform:none}
+  .s6 .sxpop ul{list-style:none;display:flex;flex-direction:column;gap:.5rem;margin:0 0 .9rem;padding:0}
+  .s6 .sxpop li{font-size:.84rem;color:#4a4762;display:flex;gap:.55em;line-height:1.45}
+  .s6 .sxpop li::before{content:'';flex:none;width:.5em;height:.5em;border-radius:50%;background:var(--teal);margin-top:.42em}
+  .s6 .sxpop li b{color:var(--navy)}
+  .s6 .sxpop .sx-cta{
+    display:inline-flex;align-items:center;gap:.45em;background:var(--navy);color:#fff;
+    font-size:.8rem;font-weight:600;padding:.55em 1.25em;border-radius:999px;text-decoration:none;
+    transition:background .3s var(--ease);
+  }
+  .s6 .sxpop .sx-cta:hover{background:var(--purple)}
+  .s6 .osmap{width:min(1160px,90vw);margin:1.2rem auto .7rem}
+  .s6 .osrow3{display:flex;justify-content:center;gap:1rem 2.6rem;flex-wrap:wrap;margin-top:.4rem;font-weight:700;font-size:clamp(.92rem,1.5vw,1.1rem);color:var(--navy)}
+  .s6 .osrow3 span{display:inline-flex;align-items:center;gap:.55em}
+  .s6 .osrow3 i{width:.55em;height:.55em;border-radius:50%;flex:none}
+  .s6 .osmap svg{width:100%;height:auto;max-height:52vh;display:block;font-family:inherit;margin:0 auto}
+  .osmap .t{font-weight:700;fill:var(--navy)}
+  .osmap .c{fill:#4a4762}
+  .osmap .lb{fill:#4a4762;font-weight:700;letter-spacing:.12em}
+  .osmap .lp{fill:var(--purple);font-weight:700;letter-spacing:.12em}
+  .osmap .ch{fill:var(--navy);font-weight:600;letter-spacing:.1em}
+  .osmap .fl{stroke:rgba(30,26,58,.55);stroke-width:1.8;fill:none}
+  .osmap .lr{stroke:var(--purple);stroke-width:1.8;fill:none;stroke-dasharray:5 5}
+  .osmap .nd{fill:var(--bg-card)}
+  .osmap .rw{fill:var(--bg)}
   .s6 .tag{text-align:center;font-weight:700;font-size:1.15rem;margin:.6rem 0 1.2rem}
   .linkcard{
     display:flex;flex-direction:column;gap:.3rem;
@@ -313,22 +363,22 @@
   .s7 .quote{margin-top:1.5rem;font-size:.85rem}
 
   /* ============ SLIDE 8 — PROOF ============ */
-  .s8 .lablede{color:var(--gray);font-size:1rem;margin-top:.9rem;max-width:46rem}
-  .s8 .cols{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem;text-align:center}
+  .s8 .lablede{color:var(--gray);font-size:.98rem;margin-top:.6rem;max-width:46rem}
+  .s8 .cols{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1rem;text-align:center}
   .s8 .cols>div{
     background:#fff;border:1px solid var(--rule);border-radius:20px;
-    padding:2.4rem 2rem 2rem;box-shadow:0 14px 40px -18px rgba(30,26,58,.12);
+    padding:1.4rem 2rem 1.1rem;box-shadow:0 14px 40px -18px rgba(30,26,58,.12);
     transition:transform .35s var(--ease),box-shadow .35s var(--ease);
   }
   .s8 .cols>div:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-  .s8 .plogo{height:clamp(3.6rem,9vh,5.2rem);width:auto;max-width:85%;object-fit:contain}
+  .s8 .plogo{height:clamp(2.4rem,5.5vh,3.4rem);width:auto;max-width:85%;object-fit:contain}
   .s8 a.plink{display:inline-block;transition:transform .3s var(--ease),opacity .3s}
   .s8 a.plink:hover{transform:translateY(-3px);opacity:.85}
-  .s8 .desc{color:var(--gray);font-size:1.02rem;margin:1.1rem 0 2rem}
-  .s8 .stat{margin-bottom:1.7rem}
-  .s8 .stat-num{font-size:clamp(2.2rem,3.8vw,3.4rem)}
-  .s8 .stat-lbl{font-size:.98rem}
-  .s8 .foot{font-size:.78rem;color:var(--gray);margin-top:.9rem;font-style:italic;border-top:1px solid var(--rule);padding-top:.9rem}
+  .s8 .desc{color:var(--gray);font-size:.95rem;margin:.6rem 0 .9rem}
+  .s8 .stat{margin-bottom:.75rem}
+  .s8 .stat-num{font-size:clamp(1.8rem,4.6vh,2.6rem)}
+  .s8 .stat-lbl{font-size:.9rem}
+  .s8 .foot{font-size:.76rem;color:var(--gray);margin-top:.4rem;font-style:italic;border-top:1px solid var(--rule);padding-top:.5rem}
 
   /* ============ SLIDE 9 — MODEL ============ */
   .s9 .hl{margin:.6rem 0 1.4rem}
@@ -402,16 +452,16 @@
   .s10 .quote{margin-top:2rem;font-size:.95rem}
 
   /* ============ SLIDE — TEAM & STRUCTURE ============ */
-  .s11t .cols{display:grid;grid-template-columns:1fr 1.28fr;gap:3.6rem;margin-top:2rem;align-items:center}
+  .s11t .cols{display:grid;grid-template-columns:1fr 1.28fr;gap:3.2rem;margin-top:1.2rem;align-items:center}
   .founder-card{
     background:#fff;border:1px solid var(--rule);border-radius:18px;
-    padding:1.6rem 1.8rem;box-shadow:0 14px 40px -18px rgba(30,26,58,.15);
+    padding:1.3rem 1.6rem 1.2rem;box-shadow:0 14px 40px -18px rgba(30,26,58,.15);
     transition:transform .35s var(--ease),box-shadow .35s var(--ease);
   }
   .founder-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-  .founder-card .fhead{display:flex;align-items:center;gap:1.25rem;margin-bottom:1.2rem}
+  .founder-card .fhead{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.6rem;margin-bottom:.9rem}
   .founder-card .avatar{
-    width:140px;height:140px;border-radius:50%;object-fit:cover;flex:none;
+    width:clamp(92px,15vh,124px);height:clamp(92px,15vh,124px);border-radius:50%;object-fit:cover;flex:none;
     border:4px solid #fff;box-shadow:0 0 0 2px var(--purple-soft),0 16px 34px -12px rgba(30,26,58,.4);
     transition:transform .4s var(--ease),box-shadow .4s var(--ease);
   }
@@ -419,18 +469,18 @@
   .founder-card h3{font-size:1.4rem;font-weight:700;letter-spacing:-.015em}
   .founder-card .role{color:var(--purple);font-weight:600;font-size:.85rem;margin-top:.15rem}
   .founder-card ul{list-style:none}
-  .founder-card li{font-size:.88rem;line-height:1.5;padding-left:1.1rem;position:relative;margin-bottom:.55rem;color:#37345a}
+  .founder-card li{font-size:.85rem;line-height:1.45;padding-left:1.1rem;position:relative;margin-bottom:.45rem;color:#37345a}
   .founder-card li::before{content:'';position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--purple)}
   .founder-card li b{color:var(--navy)}
-  .vesting{margin-top:1.25rem;border-top:1px solid var(--rule);padding-top:1.05rem}
-  .vesting .kicker{margin-bottom:.7rem}
-  .vest-row{display:flex;gap:1rem;align-items:baseline;margin-bottom:.6rem}
-  .vest-row b{font-size:1.35rem;letter-spacing:-.02em;min-width:3.4rem;font-variant-numeric:tabular-nums}
-  .vest-row span{font-size:.85rem;color:#55516e;line-height:1.5}
-  .terms{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.15rem}
+  .vesting{margin-top:.9rem;border-top:1px solid var(--rule);padding-top:.8rem}
+  .vesting .kicker{margin-bottom:.5rem}
+  .vest-row{display:flex;gap:1rem;align-items:baseline;margin-bottom:.45rem}
+  .vest-row b{font-size:1.2rem;letter-spacing:-.02em;min-width:3.1rem;font-variant-numeric:tabular-nums}
+  .vest-row span{font-size:.82rem;color:#55516e;line-height:1.45}
+  .terms{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.8rem}
   .term-chip{
-    background:var(--purple-pale);border-radius:999px;padding:.55em 1.15em;
-    font-size:.8rem;font-weight:600;color:var(--navy);
+    background:var(--purple-pale);border-radius:999px;padding:.5em 1.05em;
+    font-size:.75rem;font-weight:600;color:var(--navy);
     transition:background .3s,transform .3s var(--ease);
   }
   .term-chip:hover{background:var(--purple-soft);transform:translateY(-2px)}
@@ -471,6 +521,32 @@
   a.pc:hover{transform:translateY(-4px);box-shadow:0 12px 26px -12px rgba(176,94,241,.45);border-color:var(--purple-soft)}
   .org .pc small{display:block;font-weight:400;font-size:.62rem;color:var(--gray);margin-top:.25rem}
   .org .cap{text-align:center;font-size:.78rem;color:var(--gray);margin-top:1.2rem;font-style:italic}
+
+  /* short-viewport compaction for Team & Structure */
+  @media (max-height:820px){
+    .s11t{padding:4vh 7vw}
+    .s11t h1.h-lg{font-size:clamp(1.5rem,2.6vw,2.2rem)}
+    .s11t .cols{margin-top:.7rem;gap:2.4rem}
+    .founder-card{padding:1.1rem 1.4rem 1rem}
+    .founder-card .avatar{width:84px;height:84px}
+    .founder-card .fhead{margin-bottom:.6rem;gap:.45rem}
+    .founder-card h3{font-size:1.2rem}
+    .founder-card li{font-size:.8rem;margin-bottom:.35rem}
+    .vesting{margin-top:.7rem;padding-top:.6rem}
+    .vesting .kicker{margin-bottom:.4rem}
+    .vest-row{margin-bottom:.35rem}
+    .vest-row b{font-size:1.1rem}
+    .vest-row span{font-size:.78rem}
+    .terms{margin-top:.6rem}
+    .term-chip{font-size:.7rem;padding:.45em .95em}
+    .org .board{font-size:.8rem;padding:.5rem 1.4rem}
+    .org .hold{padding:.7rem 1.9rem}
+    .org .swat{padding:.6rem 1rem;font-size:.88rem}
+    .org .vline{height:18px}
+    .org .vline.dashed{height:14px}
+    .org .drops i{height:16px}
+    .org .cap{margin-top:.8rem}
+  }
 
   /* ============ SLIDE 11 — PIPELINE ============ */
   .s11 .cols{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1.6rem}
@@ -579,6 +655,7 @@
     .s4 .right::after{background:linear-gradient(180deg,var(--bg) 0%,transparent 14%)}
 
     .s6 .venn{width:min(88vw,430px);height:calc(min(88vw,430px)*.62)}
+    .s6 .osmap{width:92vw}
     .s6 .venn .c h4{font-size:.85rem}
     .s6 .venn .c p{font-size:.7rem;line-height:1.45}
     .s6 .venn .mid{font-size:.8rem;line-height:1.4}
@@ -819,25 +896,105 @@
     <hr class="rule" data-a style="--d:10">
   </section>
 
-  <!-- 6 · ENGINE -->
-  <section class="slide s6" data-name="Vorena Engine">
-    <div style="text-align:left"><span class="chip" data-a style="--d:0">Vorena Engine</span></div>
-    <h1 class="h-lg" data-a style="--d:1">AI-native operations + LATAM talent.</h1>
-    <div class="venn">
-      <div class="c c1">
-        <div><h4>Find</h4><p>scouting (sourcy)<br>due diligence<br>valuation</p></div>
+  <!-- 6 · VORENAOS -->
+  <section class="slide s6" data-name="vorenaOS">
+    <div class="osmark" data-a style="--d:0">vorena<span>OS</span></div>
+    <div class="ossub" data-a style="--d:1">One system runs Vorena. <span class="accent">Every cycle makes it sharper.</span></div>
+<div class="osmap" data-a style="--d:2">
+      <svg viewBox="0 0 1200 494" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="vorenaOS: agent divisions feeding the experiment data bank">
+        <defs>
+          <marker id="os-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0L10,5L0,10z" fill="rgba(30,26,58,.55)"/>
+          </marker>
+          <marker id="os-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0L10,5L0,10z" fill="#b05ef1"/>
+          </marker>
+          <pattern id="osdots" width="26" height="26" patternUnits="userSpaceOnUse">
+            <circle cx="1.6" cy="1.6" r="1.6" fill="rgba(30,26,58,.08)"/>
+          </pattern>
+        </defs>
+        <rect x="0" y="0" width="1200" height="494" fill="url(#osdots)"/>
+
+        <!-- Division 01 -->
+        <rect x="40" y="40" width="400" height="300" rx="20" class="nd" style="stroke:var(--mint-deep);stroke-width:1.8"/>
+        <rect x="64" y="62" width="204" height="30" rx="15" style="fill:var(--mint)"/>
+        <text x="166" y="82" text-anchor="middle" font-size="12.5" class="ch">01 · PRE-ACQUISITION</text>
+        <text x="416" y="82" text-anchor="end" font-size="10.5" class="st">3 AGENTS</text>
+
+        <g id="dsRow">
+          <rect x="64" y="112" width="352" height="62" rx="12" style="fill:#e8fbf5;stroke:var(--green);stroke-width:1.5"/>
+          <text x="84" y="139" font-size="19" class="t">Deal Scout</text>
+          <text x="84" y="161" font-size="10.5" class="ac">SOURCING AGENT</text>
+          <rect x="302" y="130" width="102" height="27" rx="13.5" style="fill:var(--bg-card);stroke:var(--green);stroke-width:1.4"/>
+          <circle cx="318" cy="143.5" r="3.5" class="pulse" style="fill:var(--green)"/>
+          <text x="328" y="148" font-size="10.5"><tspan class="ch">LIVE</tspan><tspan class="c">&#8202;· Sourcy</tspan></text>
+        </g>
+
+        <rect x="64" y="186" width="352" height="62" rx="12" class="rw"/>
+        <text x="84" y="213" font-size="19" class="t">Risk &amp; Truth Engine</text>
+        <text x="84" y="235" font-size="10.5" class="ac">DILIGENCE AGENT</text>
+        <text x="400" y="217" text-anchor="end" font-size="10" class="st">IN BUILD</text>
+
+        <rect x="64" y="260" width="352" height="62" rx="12" class="rw"/>
+        <text x="84" y="287" font-size="19" class="t">Scenario Valuator</text>
+        <text x="84" y="309" font-size="10.5" class="ac">VALUATION AGENT</text>
+        <text x="400" y="291" text-anchor="end" font-size="10" class="st">IN BUILD</text>
+
+        <!-- gate -->
+        <path d="M440,190 H494" class="fl" marker-end="url(#os-a)"/>
+        <rect x="500" y="166" width="200" height="48" rx="24" style="fill:var(--navy)"/>
+        <text x="600" y="195" text-anchor="middle" font-size="14" style="fill:#fff;font-weight:600;letter-spacing:.14em">ACQUISITION</text>
+        <path d="M700,190 H754" class="fl" marker-end="url(#os-a)"/>
+
+        <!-- Division 02 -->
+        <rect x="760" y="40" width="400" height="300" rx="20" class="nd" style="stroke:var(--purple-soft);stroke-width:1.8"/>
+        <rect x="784" y="62" width="172" height="30" rx="15" style="fill:var(--lav)"/>
+        <text x="870" y="82" text-anchor="middle" font-size="12.5" class="ch">02 · OPERATIONS</text>
+        <text x="1136" y="82" text-anchor="end" font-size="10.5" class="st">AGENT LAYERS</text>
+
+        <rect x="784" y="112" width="352" height="62" rx="12" class="rw"/>
+        <text x="804" y="139" font-size="19" class="t">L1 · Diagnosis</text>
+        <text x="804" y="161" font-size="10.5" class="ac">DIAGNOSIS AGENT · MAPS THE GAPS</text>
+
+        <rect x="784" y="186" width="352" height="62" rx="12" class="rw"/>
+        <text x="804" y="213" font-size="19" class="t">L2 · Source of Truth</text>
+        <text x="804" y="235" font-size="10.5" class="ac">GATEKEEPER AGENT · ONE CLEAN DATA LAYER</text>
+
+        <rect x="784" y="260" width="352" height="62" rx="12" class="rw"/>
+        <text x="804" y="287" font-size="19" class="t">L3 · Expert Suite</text>
+        <text x="804" y="309" font-size="10.5" class="ac">SPECIALIST AGENTS · BORN ON DEMAND</text>
+
+        <!-- flows -->
+        <path d="M330,340 V394" class="fl" marker-end="url(#os-a)"/>
+        <text x="342" y="372" font-size="12" class="lb">REJECTED DEALS</text>
+        <path d="M260,400 V346" class="lr" marker-end="url(#os-b)"/>
+        <text x="248" y="372" text-anchor="end" font-size="12" class="lp">SMARTER BUYING</text>
+        <path d="M900,340 V394" class="fl" marker-end="url(#os-a)"/>
+        <text x="912" y="372" font-size="12" class="lb">EXPERIMENTS</text>
+        <path d="M830,400 V346" class="lr" marker-end="url(#os-b)"/>
+        <text x="818" y="372" text-anchor="end" font-size="12" class="lp">PROVEN PLAYBOOKS</text>
+
+        <!-- data bank -->
+        <rect x="240" y="400" width="720" height="64" rx="18" style="fill:#fdf8e2;stroke:var(--yellow);stroke-width:1.8"/>
+        <text x="270" y="440" font-size="17.5"><tspan class="t">The Experiment Data Bank</tspan><tspan class="c" font-size="15.5">&#8194;&#8212;&#8194;every change is an experiment; evidence becomes playbooks</tspan></text>
+      </svg>
+      <div class="sxpop" id="sxpop" role="dialog" aria-label="Sourcy details">
+        <span class="livehdr"><i></i>SOURCY · THE DEAL SCOUT AGENT · LIVE</span>
+        <ul>
+          <li><span><b>Thesis in.</b> Sector, geography, size, margin floors — Vorena's criteria, encoded.</span></li>
+          <li><span><b>Agent runs.</b> Scans the market and scores every target against the thesis.</span></li>
+          <li><span><b>Pipeline out.</b> A prioritized target list, with the rationale behind every score.</span></li>
+          <li><span><b>Loop closes.</b> Every rejection lands in the data bank — sourcing gets smarter.</span></li>
+        </ul>
+        <a class="sx-cta" href="https://sourcy-iota.vercel.app" target="_blank" rel="noopener">Open Sourcy ↗</a>
       </div>
-      <div class="c c2">
-        <div><h4>Operate</h4><p>automation<br>reporting<br>pricing<br>support</p></div>
-      </div>
-      <div class="mid"><span>Vorena<br>Engine +<br>LATAM<br>Talent</span></div>
     </div>
-    <div class="tag" data-a style="--d:8">Every deal makes the engine sharper.</div>
-    <a class="linkcard" href="https://sourcy-iota.vercel.app" target="_blank" rel="noopener" data-a style="--d:9">
-      <span class="url"><span class="dot">🔍</span> sourcy-iota.vercel.app <span style="margin-left:auto">↗</span></span>
-      <b>Sourcy · Vorena Capital</b>
-      <p>Sourcy — Vorena Capital's deal-sourcing engine. Configure a thesis, run the sourcing agent, prioritize acquisition targets.</p>
-    </a>
+
+    <div class="osrow3" data-a style="--d:3">
+      <span><i style="background:var(--teal)"></i>Agents do the repeatable work</span>
+      <span><i style="background:var(--purple)"></i>People make the judgment calls</span>
+      <span><i style="background:var(--yellow)"></i>The bank remembers everything</span>
+    </div>
   </section>
 
   <!-- 7 · DISTRIBUTION -->
@@ -1312,6 +1469,17 @@
     track(e).catch(function(x){ console.warn('[deck] tracking failed', x); });  // fire-and-forget
     setTimeout(function(){ reveal(true); }, 380);
   });
+})();
+</script>
+<script>
+(function(){
+  var row=document.getElementById('dsRow'),pop=document.getElementById('sxpop');
+  if(!row||!pop)return;
+  function toggle(){pop.classList.toggle('open');}
+  row.addEventListener('click',function(e){e.stopPropagation();toggle();});
+  pop.addEventListener('click',function(e){e.stopPropagation();});
+  document.addEventListener('click',function(){pop.classList.remove('open');});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')pop.classList.remove('open');});
 })();
 </script>
 </body>
