@@ -454,33 +454,34 @@
   /* ============ SLIDE — TEAM & STRUCTURE ============ */
   .s11t .cols{display:grid;grid-template-columns:1fr 1.28fr;gap:3.2rem;margin-top:1.2rem;align-items:center}
   .founder-card{
+    font-size:clamp(11.5px,2vh,16.5px);
     background:#fff;border:1px solid var(--rule);border-radius:18px;
-    padding:1.3rem 1.6rem 1.2rem;box-shadow:0 14px 40px -18px rgba(30,26,58,.15);
+    padding:1.3em 1.6em 1.2em;box-shadow:0 14px 40px -18px rgba(30,26,58,.15);
     transition:transform .35s var(--ease),box-shadow .35s var(--ease);
   }
   .founder-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-  .founder-card .fhead{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.6rem;margin-bottom:.9rem}
+  .founder-card .fhead{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.6em;margin-bottom:.9em}
   .founder-card .avatar{
-    width:clamp(92px,15vh,124px);height:clamp(92px,15vh,124px);border-radius:50%;object-fit:cover;flex:none;
+    width:clamp(76px,13.5vh,120px);height:clamp(76px,13.5vh,120px);border-radius:50%;object-fit:cover;flex:none;
     border:4px solid #fff;box-shadow:0 0 0 2px var(--purple-soft),0 16px 34px -12px rgba(30,26,58,.4);
     transition:transform .4s var(--ease),box-shadow .4s var(--ease);
   }
   .founder-card:hover .avatar{transform:scale(1.05) rotate(-2deg);box-shadow:0 0 0 3px var(--purple),0 18px 36px -12px rgba(176,94,241,.45)}
-  .founder-card h3{font-size:1.4rem;font-weight:700;letter-spacing:-.015em}
-  .founder-card .role{color:var(--purple);font-weight:600;font-size:.85rem;margin-top:.15rem}
+  .founder-card h3{font-size:1.35em;font-weight:700;letter-spacing:-.015em}
+  .founder-card .role{color:var(--purple);font-weight:600;font-size:.85em;margin-top:.15em}
   .founder-card ul{list-style:none}
-  .founder-card li{font-size:.85rem;line-height:1.45;padding-left:1.1rem;position:relative;margin-bottom:.45rem;color:#37345a}
+  .founder-card li{font-size:.85em;line-height:1.45;padding-left:1.3em;position:relative;margin-bottom:.5em;color:#37345a}
   .founder-card li::before{content:'';position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--purple)}
   .founder-card li b{color:var(--navy)}
-  .vesting{margin-top:.9rem;border-top:1px solid var(--rule);padding-top:.8rem}
-  .vesting .kicker{margin-bottom:.5rem}
-  .vest-row{display:flex;gap:1rem;align-items:baseline;margin-bottom:.45rem}
-  .vest-row b{font-size:1.2rem;letter-spacing:-.02em;min-width:3.1rem;font-variant-numeric:tabular-nums}
-  .vest-row span{font-size:.82rem;color:#55516e;line-height:1.45}
-  .terms{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.8rem}
+  .vesting{margin-top:.9em;border-top:1px solid var(--rule);padding-top:.8em}
+  .vesting .kicker{margin-bottom:.6em;font-size:.75em}
+  .vest-row{display:flex;gap:1em;align-items:baseline;margin-bottom:.45em}
+  .vest-row b{font-size:1.2em;letter-spacing:-.02em;min-width:2.7em;font-variant-numeric:tabular-nums}
+  .vest-row span{font-size:.82em;color:#55516e;line-height:1.45}
+  .terms{display:flex;gap:.6em;flex-wrap:wrap;margin-top:.8em}
   .term-chip{
     background:var(--purple-pale);border-radius:999px;padding:.5em 1.05em;
-    font-size:.75rem;font-weight:600;color:var(--navy);
+    font-size:.72em;font-weight:600;color:var(--navy);
     transition:background .3s,transform .3s var(--ease);
   }
   .term-chip:hover{background:var(--purple-soft);transform:translateY(-2px)}
@@ -523,22 +524,10 @@
   .org .cap{text-align:center;font-size:.78rem;color:var(--gray);margin-top:1.2rem;font-style:italic}
 
   /* short-viewport compaction for Team & Structure */
-  @media (max-height:820px){
+  @media (max-height:820px),(max-width:1180px){
     .s11t{padding:4vh 7vw}
     .s11t h1.h-lg{font-size:clamp(1.5rem,2.6vw,2.2rem)}
     .s11t .cols{margin-top:.7rem;gap:2.4rem}
-    .founder-card{padding:1.1rem 1.4rem 1rem}
-    .founder-card .avatar{width:84px;height:84px}
-    .founder-card .fhead{margin-bottom:.6rem;gap:.45rem}
-    .founder-card h3{font-size:1.2rem}
-    .founder-card li{font-size:.8rem;margin-bottom:.35rem}
-    .vesting{margin-top:.7rem;padding-top:.6rem}
-    .vesting .kicker{margin-bottom:.4rem}
-    .vest-row{margin-bottom:.35rem}
-    .vest-row b{font-size:1.1rem}
-    .vest-row span{font-size:.78rem}
-    .terms{margin-top:.6rem}
-    .term-chip{font-size:.7rem;padding:.45em .95em}
     .org .board{font-size:.8rem;padding:.5rem 1.4rem}
     .org .hold{padding:.7rem 1.9rem}
     .org .swat{padding:.6rem 1rem;font-size:.88rem}
