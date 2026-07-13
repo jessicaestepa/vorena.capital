@@ -385,28 +385,34 @@
   .s9 .grid{
     display:grid;grid-template-columns:repeat(4,1fr);gap:2.2rem;
     border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
-    padding:2.2rem 0 2.6rem;margin-top:1.2rem;text-align:center;
+    padding:1.8rem 0 1.6rem;margin-top:1rem;text-align:center;
     align-items:start;
   }
   .s9 .grid>div+div{border-left:1px solid var(--rule);padding-left:2.2rem}
-  .s9 .note{font-size:.75rem;color:var(--gray);margin-top:1.2rem}
+  .s9 .note{font-size:.75rem;color:var(--gray);margin-top:.9rem}
   .s9 .grid .outcome{
     background:linear-gradient(150deg,rgba(176,94,241,.10),rgba(124,232,219,.12));
     border:1px solid var(--purple-soft);border-left:1px solid var(--purple-soft);
     border-radius:16px;padding:1.3rem 1.3rem .2rem;margin-top:-1.3rem;
   }
   .s9 .grid .kicker{text-align:left}
-  .s9 .stat{margin-bottom:1.6rem}
+  .s9 .stat{margin-bottom:1.25rem}
   .s9 .outcome .kicker{color:var(--purple)}
   .s9 .outcome .stat-num{color:var(--purple)}
+  .s9 .outcome .onet{
+    font-size:.72rem;line-height:1.5;color:#55516e;text-align:left;
+    border-top:1px solid var(--purple-soft);padding:.7rem 0 .9rem;margin-top:-.5rem;
+  }
+  .s9 .outcome .onet b{color:var(--purple)}
 
   /* ============ SLIDE — THE RAISE ============ */
   .sraise .uof{display:flex;gap:6px;margin-top:2.4rem;height:78px}
   .sraise .seg{display:flex;flex-direction:column;justify-content:center;padding:0 1.5rem;color:#fff;border-radius:14px}
   .sraise .seg b{font-size:1.4rem;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
   .sraise .seg span{font-size:.66rem;text-transform:uppercase;letter-spacing:.14em;opacity:.85;margin-top:.15rem}
-  .sraise .seg.buy{flex:4;background:linear-gradient(100deg,var(--purple),#8f7ae8 60%,var(--mint-deep));box-shadow:0 14px 34px -14px rgba(176,94,241,.55)}
-  .sraise .seg.ops{flex:1.15;background:var(--navy)}
+  .sraise .seg.buy{flex:9;background:linear-gradient(100deg,var(--purple),#8f7ae8 60%,var(--mint-deep));box-shadow:0 14px 34px -14px rgba(176,94,241,.55)}
+  .sraise .seg.ops{flex:1;background:var(--navy);padding:0 1rem}
+  .sraise .seg.ops span{white-space:nowrap}
   .sraise .uof-grid{
     display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem;
     border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
@@ -1085,12 +1091,12 @@
         <div class="kicker" data-a style="--d:3">What we buy</div>
         <div class="stat" data-a style="--d:4"><div class="stat-num">1M–5M</div><div class="stat-lbl">target revenue</div></div>
         <div class="stat" data-a style="--d:5"><div class="stat-num">$800K&ndash;1M</div><div class="stat-lbl">acquisition price</div></div>
-        <div class="stat" data-a style="--d:6"><div class="stat-num" data-count="5" data-prefix="~">~5</div><div class="stat-lbl">companies, first tranche</div></div>
+        <div class="stat" data-a style="--d:6"><div class="stat-num" data-count="5" data-prefix="~">~5</div><div class="stat-lbl">companies from tranche&nbsp;1, then cashflow funds the next ones</div></div>
       </div>
       <div>
         <div class="kicker" data-a style="--d:4">The multiples</div>
         <div class="stat" data-a style="--d:5"><div class="stat-num">1–3x</div><div class="stat-lbl">entry EBITDA</div></div>
-        <div class="stat" data-a style="--d:6"><div class="stat-num">4–5x</div><div class="stat-lbl">target EBITDA</div></div>
+        <div class="stat" data-a style="--d:6"><div class="stat-num">5.8x</div><div class="stat-lbl">EBITDA at maturity</div></div>
       </div>
       <div>
         <div class="kicker" data-a style="--d:5">The raise</div>
@@ -1101,9 +1107,10 @@
         <div class="kicker" data-a style="--d:6">The outcome</div>
         <div class="stat" data-a style="--d:7"><div class="stat-num" data-count="7" data-suffix="x">7x</div><div class="stat-lbl">value created</div></div>
         <div class="stat" data-a style="--d:8"><div class="stat-num" data-count="38" data-suffix="%">38%</div><div class="stat-lbl">gross IRR</div></div>
+        <p class="onet" data-a style="--d:9">Investor net via secondary: <b>2x</b> at year 6, growing to <b>8.8x</b> by year 15.</p>
       </div>
     </div>
-    <p class="note" data-a style="--d:9">Modeled on a 5-yr view. Default is hold &amp; compound &mdash; exits, if any, at 4&ndash;5x transformed EBITDA.</p>
+    <p class="note" data-a style="--d:9">Modeled on a 6-yr view. Default is hold and compound. Exits, if any, at transformed multiples.</p>
   </section>
 
   <!-- 11 · THE RAISE -->
@@ -1111,17 +1118,17 @@
     <div><span class="chip" data-a style="--d:0">The Raise</span></div>
     <h1 class="h-lg" data-a style="--d:1">$5M to build the first portfolio.</h1>
     <div class="uof" data-a style="--d:2">
-      <div class="seg buy"><b>~$4M</b><span>acquisitions</span></div>
-      <div class="seg ops"><b>~$1M</b><span>operations</span></div>
+      <div class="seg buy"><b>~$4.5M</b><span>acquisitions</span></div>
+      <div class="seg ops"><b>~$500K</b><span>operations</span></div>
     </div>
     <div class="uof-grid">
       <div data-a style="--d:3">
-        <div class="kicker">Acquisitions &middot; ~80%</div>
+        <div class="kicker">Acquisitions &middot; 90%</div>
         <h3>4&ndash;5 companies</h3>
         <p>$800K&ndash;$1M average entry &middot; EBITDA-positive, AI-absorbable &middot; sourced and diligenced by the engine.</p>
       </div>
       <div data-a style="--d:4">
-        <div class="kicker">Holding operations &middot; ~20%</div>
+        <div class="kicker">Holding operations &middot; 10%</div>
         <h3>Operating fee</h3>
         <p>The SWAT team that transforms every company &mdash; sourcing, AI engineering, integration &mdash; run lean inside the HoldCo.</p>
       </div>
@@ -1146,7 +1153,7 @@
       <div class="path-card" data-a style="--d:3">
         <div class="kicker">Your liquidity path</div>
         <h3>Secondaries</h3>
-        <p>Sell your position to new investors at each step-up.</p>
+        <p>Sell your position to new investors at each step-up. At year 6, a tranche 1 investor selling via secondary takes roughly 2x. At year 15, closer to 9x.</p>
       </div>
       <div class="path-card" data-a style="--d:4">
         <div class="kicker">Only when it's right</div>
